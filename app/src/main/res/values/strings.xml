@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LFWFramework</string>
+    <string name="title_activity_base_screen">BaseScreen</string>
+    <string name="title_activity_base_screen_with_header">BaseScreenWithHeader</string>
+</resources>
