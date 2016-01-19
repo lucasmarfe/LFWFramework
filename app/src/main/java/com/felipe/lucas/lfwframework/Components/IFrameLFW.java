@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
@@ -12,9 +13,11 @@ import java.util.List;
  */
 public class IFrameLFW extends RelativeLayout {
     private List<View> m_OrdeneredObjectsList = new ArrayList<View>();
+    FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
     public IFrameLFW(Context context) {
         super(context);
+        setLayoutParams(m_LayoutParams);
     }
 
     public void add(View p_Component)
@@ -56,17 +59,26 @@ public class IFrameLFW extends RelativeLayout {
         View v_PreviousComponent = null;
         for(View v_Component : m_OrdeneredObjectsList)
         {
-            if(c_Count ==0)
+            //RelativeLayout.LayoutParams v_LayoutParamFirstElement = null;
+            RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//            if(c_Count ==0)
+//            {
+////                v_LayoutParamFirstElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+////                addView(v_Component,v_LayoutParamFirstElement);
+//            }
+//            else
+            if(c_Count!=0)
             {
-                RelativeLayout.LayoutParams v_LayoutParamFirstElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                addView(v_Component,v_LayoutParamFirstElement);
-            }
-            else
-            {
-                RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
-                addView(v_Component, v_LayoutParamElement);
+
             }
+            if(v_Component instanceof ButtonLFW)
+            {
+                v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
+                        RelativeLayout.TRUE);
+            }
+            addView(v_Component, v_LayoutParamElement);
             v_PreviousComponent = v_Component;
             c_Count++;
         }
