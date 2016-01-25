@@ -12,71 +12,56 @@ import java.util.List;
  * Created by lucas on 15/01/2016.
  */
 public class IFrameLFW extends RelativeLayout {
-    private List<View> m_OrdeneredObjectsList = new ArrayList<View>();
+    private ArrayList<View> m_OrderedObjectsList = new ArrayList<View>();
     FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
     public IFrameLFW(Context context) {
         super(context);
+        //setGravity(Gravity.CENTER_VERTICAL);
+        //m_LayoutParams.gravity = Gravity.CENTER_VERTICAL;
         setLayoutParams(m_LayoutParams);
     }
 
     public void add(View p_Component)
     {
-        m_OrdeneredObjectsList.add(p_Component);
+        m_OrderedObjectsList.add(p_Component);
     }
 
     public void addBeforeComponent(View p_Component, View p_NextComponent)
     {
-        int c_Position = m_OrdeneredObjectsList.indexOf(p_NextComponent);
-        m_OrdeneredObjectsList.add(c_Position, p_Component);
+        int c_Position = m_OrderedObjectsList.indexOf(p_NextComponent);
+        m_OrderedObjectsList.add(c_Position, p_Component);
     }
 
     public void addAfterComponent(View p_Component, View p_PreviousComponent)
     {
-        int c_Position = m_OrdeneredObjectsList.indexOf(p_PreviousComponent);
-        m_OrdeneredObjectsList.add(c_Position+1, p_Component);
+        int c_Position = m_OrderedObjectsList.indexOf(p_PreviousComponent);
+        m_OrderedObjectsList.add(c_Position + 1, p_Component);
     }
-
-
-//    RelativeLayout mRlayout = (RelativeLayout) findViewById(R.id.relativeBaseScreenId);
-//    FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//    mRlayout.setLayoutParams(layoutParams);
-//
-//    RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//    RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//
-//    m_Input = new InputLFW(m_Context,"Input", true);
-//    m_Input.setWidth(250);
-//    ButtonLFW m_Button = new ButtonLFW(m_Context,"Botão", true);
-//    params2.addRule(RelativeLayout.BELOW, m_Input.getId());
-//    //params2.addRule(RelativeLayout.ALIGN_BOTTOM, m_Input.getId());
-//    mRlayout.addView(m_Input,params1);
-//    mRlayout.addView(m_Button,params2);
 
     public void builScreen()
     {
         int c_Count = 0;
         View v_PreviousComponent = null;
-        for(View v_Component : m_OrdeneredObjectsList)
+        for (View v_Component : m_OrderedObjectsList)
         {
-            //RelativeLayout.LayoutParams v_LayoutParamFirstElement = null;
-            RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//            if(c_Count ==0)
-//            {
-////                v_LayoutParamFirstElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-////                addView(v_Component,v_LayoutParamFirstElement);
-//            }
-//            else
-            if(c_Count!=0)
-            {
-//                v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
+            RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
+                    (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
+                            .WRAP_CONTENT);
 
-            }
             if(v_Component instanceof ButtonLFW)
             {
                 v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                         RelativeLayout.TRUE);
+            }
+//            if(v_Component instanceof SelectLFW)
+//            {
+//                v_LayoutParamElement = new RelativeLayout.LayoutParams(LayoutParams
+// .MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//            }
+            if (c_Count != 0) {
+                v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
+
             }
             addView(v_Component, v_LayoutParamElement);
             v_PreviousComponent = v_Component;
