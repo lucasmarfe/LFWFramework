@@ -17,7 +17,7 @@ public class UtilLFW {
         {
             v_PossibleID = Math.abs(v_RandomGenerator.nextInt());
         }
-        while(m_IDsList.contains(v_PossibleID));
+        while (m_IDsList.contains(v_PossibleID) || v_PossibleID == 0);
         m_IDsList.add(v_PossibleID);
         return v_PossibleID;
     }
