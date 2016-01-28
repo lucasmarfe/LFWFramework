@@ -1,6 +1,7 @@
 package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -18,7 +19,7 @@ public class IFrameLFW extends RelativeLayout {
 
     public IFrameLFW(Context context) {
         super(context);
-        //setGravity(Gravity.CENTER_VERTICAL);
+        setGravity(Gravity.CENTER);
         //m_LayoutParams.gravity = Gravity.CENTER_VERTICAL;
         setLayoutParams(m_LayoutParams);
     }
@@ -60,7 +61,7 @@ public class IFrameLFW extends RelativeLayout {
                 v_LayoutParamElement = new RelativeLayout.LayoutParams
                         (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                                 .WRAP_CONTENT);
-                v_LayoutParamElement.addRule(RelativeLayout.ALIGN_LEFT,
+                v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                         RelativeLayout.TRUE);
             }
 //            if(v_Component instanceof SelectLFW)
