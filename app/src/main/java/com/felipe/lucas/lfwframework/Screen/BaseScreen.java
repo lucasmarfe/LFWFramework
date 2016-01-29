@@ -16,6 +16,7 @@ import com.felipe.lucas.lfwframework.Components.ButtonLFW;
 import com.felipe.lucas.lfwframework.Components.CheckBoxLFW;
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.Components.InputLFW;
+import com.felipe.lucas.lfwframework.Components.InputPasswordLFW;
 import com.felipe.lucas.lfwframework.Components.MyEditTextDatePicker;
 import com.felipe.lucas.lfwframework.Components.RadioLFW;
 import com.felipe.lucas.lfwframework.Components.SelectLFW;
@@ -29,7 +30,6 @@ import java.util.Calendar;
 public class BaseScreen extends AppCompatActivity {
     private Context m_Context;
     InputLFW m_Input;
-    private TextView mDateTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,7 +69,7 @@ public class BaseScreen extends AppCompatActivity {
         m_EditText.setClickable(true);
         MyEditTextDatePicker m_Date = new MyEditTextDatePicker(this, m_EditText);
 
-
+        InputPasswordLFW m_InputPassword = new InputPasswordLFW(m_Context, "Input", true);
         v_IFrame.add(m_Input);
         v_IFrame.add(m_Input2);
         v_IFrame.add(m_Radio);
@@ -78,6 +78,7 @@ public class BaseScreen extends AppCompatActivity {
         v_IFrame.add(m_EditText);
         //
         v_IFrame.add(m_Button);
+        v_IFrame.add(m_InputPassword);
 
         v_IFrame.builScreen();
         //params2.addRule(RelativeLayout.BELOW, m_Input.getId());
