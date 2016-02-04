@@ -28,8 +28,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 
 public class BaseScreen extends AppCompatActivity {
-    private Context m_Context;
-    InputLFW m_Input;
+    public Context m_Context;
+    public IFrameLFW m_IFrame;
+    //InputLFW m_Input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,7 +38,7 @@ public class BaseScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         m_Context=getApplicationContext();
         setDefaultBackgroundColor();//getResources().getColor(R.color.background));
-        setContentView(R.layout.base_screen);
+        //setContentView(R.layout.base_screen);
         IFrameLFW v_IFrame = new IFrameLFW(m_Context);
         //RelativeLayout mRlayout = (RelativeLayout) findViewById(R.id.relativeBaseScreenId);
 //        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -45,8 +46,8 @@ public class BaseScreen extends AppCompatActivity {
 //
 //        RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 //        RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
-        m_Input = new InputLFW(m_Context,"Input", true);
+/***********************************************************************************
+ InputLFW m_Input = new InputLFW(m_Context,"Input", true);
         m_Input.setWidth(500);
         InputLFW m_Input2 = new InputLFW(m_Context,"Input 2", true);
         m_Input2.setWidth(500);
@@ -87,9 +88,10 @@ public class BaseScreen extends AppCompatActivity {
         //mRlayout.addView(m_Button,params2);
         addOnScreen(v_IFrame);
         //setContentView(v_IFrame);
+ *//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
-    private void addOnScreen (IFrameLFW p_IFrame) {
+    public void addOnScreen (IFrameLFW p_IFrame) {
         RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
         addContentView(p_IFrame, v_LayoutParamElement);
     }

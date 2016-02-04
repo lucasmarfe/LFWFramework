@@ -19,7 +19,7 @@ public class IFrameLFW extends RelativeLayout {
 
     public IFrameLFW(Context context) {
         super(context);
-        setGravity(Gravity.CENTER);
+        //setGravity(Gravity.CENTER);
         //m_LayoutParams.gravity = Gravity.CENTER_VERTICAL;
         setLayoutParams(m_LayoutParams);
     }
@@ -39,6 +39,10 @@ public class IFrameLFW extends RelativeLayout {
     {
         int c_Position = m_OrderedObjectsList.indexOf(p_PreviousComponent);
         m_OrderedObjectsList.add(c_Position + 1, p_Component);
+    }
+
+    public void clear () {
+        m_OrderedObjectsList.clear();
     }
 
     public void builScreen()
