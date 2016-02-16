@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Screen;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,9 +12,11 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.Components.MenuLFW;
+import com.felipe.lucas.lfwframework.Components.ToolbarLFW;
 import com.felipe.lucas.lfwframework.R;
 
 /**
@@ -29,8 +32,16 @@ public class BaseMenuScreen extends BaseScreen {
         super.onCreate(savedInstanceState);
         m_Context = getApplicationContext();
         m_IFrame = new IFrameLFW(m_Context);
-        getSupportActionBar().hide();
-
+        //Toolbar mToolbar = (Toolbar) findViewById(R.layout.Toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        // getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar
+        //        .DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().hide();
+        ToolbarLFW myToolbar = new ToolbarLFW(getApplicationContext(), "Menu");
+        setSupportActionBar(myToolbar);
+        m_IFrame.add(myToolbar);
+        //getSupportActionBar().show();
         m_Menu = new MenuLFW(m_Context);
         m_Menu.setMenuItens(m_Context, contacts);
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout
