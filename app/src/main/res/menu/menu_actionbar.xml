@@ -1,0 +1,91 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="0"/>
+    <item
+        android:id="@+id/action_settings34"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="1"/>
+    <item
+        android:id="@+id/action_settings3"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="2"/>
+
+</menu>
+
+    <!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--tools:context="be.hcpl.android.example.MainActivity" >-->
+
+    <!--&lt;!&ndash; an option that never appears as a fixed text/icon in the actionbar &ndash;&gt;-->
+    <!--&lt;!&ndash;<item android:id="@+id/action_one"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:title="Action1"&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;android:orderInCategory="100"&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;app:showAsAction="never" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash; another option that only appears if there is enough room &ndash;&gt;-->
+    <!--<item android:id="@+id/action_two"-->
+    <!--android:title="Action2"-->
+    <!--android:orderInCategory="200"-->
+    <!--app:showAsAction="ifRoom" />-->
+
+    <!--&lt;!&ndash; a last option that always appears &ndash;&gt;-->
+    <!--<item android:id="@+id/action_three"-->
+    <!--android:title="Action3"-->
+    <!--android:orderInCategory="300"-->
+    <!--app:showAsAction="always" />-->
+
+    <!--&lt;!&ndash; an option to show with both icon and text &ndash;&gt;-->
+    <!--<item android:id="@+id/action_four"-->
+    <!--android:icon="@android:drawable/ic_menu_directions"-->
+    <!--android:title="Action4"-->
+    <!--android:orderInCategory="400"-->
+    <!--app:showAsAction="withText|always" />-->
+
+    <!--&lt;!&ndash; an option to always show as an icon only &ndash;&gt;-->
+    <!--<item android:id="@+id/action_five"-->
+    <!--android:icon="@android:drawable/ic_menu_info_details"-->
+    <!--android:title="Action5"-->
+    <!--android:orderInCategory="500"-->
+    <!--app:showAsAction="always" />-->
+
+    <!--</menu>-->
+
+
+    <!--&lt;!&ndash;<menu xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:LFWFramework="http://schemas.android.com/apk/res-auto"&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:app="http://schemas.android.com/tools">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;&lt;!&ndash;<item&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/action_settings"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orderInCategory="100"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:showAsAction="never"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:title="Teste"/>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<item&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/action_settings"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:title="Settings">&ndash;&gt;-->
+    <!--&lt;!&ndash;</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;</menu>&ndash;&gt;-->
+    <!--&lt;!&ndash;<menu xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:app="http://schemas.android.com/apk/res-auto"&ndash;&gt;-->
+    <!--&lt;!&ndash;xmlns:LFWFramework="http://schemas.android.com/tools">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;&lt;!&ndash; "Mark Favorite", should appear as action button if possible &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;<item&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;android:id="@+id/action_favorite"&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;android:icon="@drawable/ic_favorite_black_48dp"&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;android:title="Teste1"&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;app:showAsAction="ifRoom"/>&ndash;&gt;&ndash;&gt;-->
+
+    <!--&lt;!&ndash;&lt;!&ndash; Settings, should always be in the overflow &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<item android:id="@+id/action_settings"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:title="Teste2"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:showAsAction="never"/>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</menu>&ndash;&gt;-->

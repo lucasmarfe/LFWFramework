@@ -36,6 +36,9 @@ public class BaseScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         m_Context=getApplicationContext();
         setDefaultBackgroundColor();//getResources().getColor(R.color.background));
         //setContentView(R.layout.base_screen);
@@ -93,7 +96,7 @@ public class BaseScreen extends AppCompatActivity {
 
     public void addOnScreen (IFrameLFW p_IFrame) {
         RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-        addContentView(p_IFrame, v_LayoutParamElement);
+        setContentView(p_IFrame, v_LayoutParamElement);
     }
 
     public void setDefaultBackgroundColor () {

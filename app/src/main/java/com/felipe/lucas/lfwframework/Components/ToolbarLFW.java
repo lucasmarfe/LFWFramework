@@ -21,13 +21,15 @@ public class ToolbarLFW extends android.support.v7.widget.Toolbar {
     public ToolbarLFW (Context p_Context, String p_Text) {
         super(p_Context);
         setId(UtilLFW.getAvailableID());
-        LayoutParams v_LayoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT);
+
+        LayoutParams v_LayoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
         //v_LayoutParams.height = 2400;
         setLayoutParams(v_LayoutParams);
         setMinimumHeight(150);
-        setBackgroundColor(ContextCompat.getColor(p_Context, R.color.darkBlue_Scheme));
+        //setBackgroundColor(ContextCompat.getColor(p_Context, R.color.darkBlue_Scheme));
         setElevation((float) 4.0);
-        setPopupTheme(R.style.AppTheme_PopupOverlay);
+        //setPopupTheme(R.style.AppTheme_PopupOverlay);
         setTitle(p_Text);
         for (int i = 0; i < this.getChildCount(); ++i) {
             View child = this.getChildAt(i);

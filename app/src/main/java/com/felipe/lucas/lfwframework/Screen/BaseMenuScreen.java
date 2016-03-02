@@ -3,6 +3,7 @@ package com.felipe.lucas.lfwframework.Screen;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,8 +13,8 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
+import com.felipe.lucas.lfwframework.Components.CustomToolbar;
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.Components.MenuLFW;
 import com.felipe.lucas.lfwframework.Components.ToolbarLFW;
@@ -37,9 +38,29 @@ public class BaseMenuScreen extends BaseScreen {
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         // getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar
         //        .DISPLAY_SHOW_CUSTOM);
-        //getSupportActionBar().hide();
+        //getSupportActionBar().show();
+
+
+//        SpannableString s = new SpannableString("My Title");
+//        s.setSpan(new TypefaceSpan(this, "MyTypeface.otf"), 0, s.length(),
+//                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        // Update the action bar title with the TypefaceSpan instance
+//        ActionBar actionBar = getActionBar();
+//        actionBar.setTitle(s);
+
         ToolbarLFW myToolbar = new ToolbarLFW(getApplicationContext(), "Menu");
+
+        //Toolbar myToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar2);
+        //CustomToolbar myToolbar = new CustomToolbar(getApplicationContext());
+        //myToolbar.setm
+        //myToolbar.setTitle("Teste");
         setSupportActionBar(myToolbar);
+        //myToolbar.setNavigationIcon(R.drawable);
+        //myToolbar.inflateMenu(R.menu.menu_actionbar)
+        //ActionBar ab = getSupportActionBar();
+        //ab.setDisplayHomeAsUpEnabled(true);
+
         m_IFrame.add(myToolbar);
         //getSupportActionBar().show();
         m_Menu = new MenuLFW(m_Context);
@@ -53,6 +74,36 @@ public class BaseMenuScreen extends BaseScreen {
         addOnScreen(m_IFrame);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        //getMenuInflater().inflate(R.menu.menu_actionbar, menu);
+        menu.add(Menu.NONE, 2, 100, "History").setIcon(R.drawable.ic_first_page_white_36dp)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        //return(super.onCreateOptionsMenu(menu));
+        return true;
+    }
+
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//        // If the nav drawer is open, hide action items related to the content
+//        // view
+//        // boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+//        // menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
+//        return super.onPrepareOptionsMenu(menu);
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+////        int id = item.getItemId();
+////        if (id == R.id.action_settings) {
+////            return true;
+////        }
+//        return super.onOptionsItemSelected(item);
+//    }
 //    @Override
 //    public boolean onCreateOptionsMenu (Menu menu) {
 //        super.onCreateOptionsMenu(menu);

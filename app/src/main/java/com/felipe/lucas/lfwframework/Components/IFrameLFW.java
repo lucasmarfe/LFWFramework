@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -15,28 +16,26 @@ import java.util.List;
  */
 public class IFrameLFW extends RelativeLayout {
     private ArrayList<View> m_OrderedObjectsList = new ArrayList<View>();
-    FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
+            .LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
-    public IFrameLFW(Context context) {
+    public IFrameLFW (Context context) {
         super(context);
         //setGravity(Gravity.CENTER);
         //m_LayoutParams.gravity = Gravity.CENTER_VERTICAL;
         setLayoutParams(m_LayoutParams);
     }
 
-    public void add(View p_Component)
-    {
+    public void add (View p_Component) {
         m_OrderedObjectsList.add(p_Component);
     }
 
-    public void addBeforeComponent(View p_Component, View p_NextComponent)
-    {
+    public void addBeforeComponent (View p_Component, View p_NextComponent) {
         int c_Position = m_OrderedObjectsList.indexOf(p_NextComponent);
         m_OrderedObjectsList.add(c_Position, p_Component);
     }
 
-    public void addAfterComponent(View p_Component, View p_PreviousComponent)
-    {
+    public void addAfterComponent (View p_Component, View p_PreviousComponent) {
         int c_Position = m_OrderedObjectsList.indexOf(p_PreviousComponent);
         m_OrderedObjectsList.add(c_Position + 1, p_Component);
     }
@@ -45,18 +44,23 @@ public class IFrameLFW extends RelativeLayout {
         m_OrderedObjectsList.clear();
     }
 
-    public void builScreen()
-    {
+    public void builScreen () {
         int c_Count = 0;
         View v_PreviousComponent = null;
-        for (View v_Component : m_OrderedObjectsList)
-        {
+
+        for (View v_Component : m_OrderedObjectsList) {
+//            if (v_Component instanceof ToolbarLFW)
+//            {
+//
+//               addView(v_Component);
+//                v_PreviousComponent = v_Component;
+//            }
+//            else {
+
             RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
                     (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
                             .WRAP_CONTENT);
-
-            if(v_Component instanceof ButtonLFW)
-            {
+            if (v_Component instanceof ButtonLFW) {
                 v_LayoutParamElement.setMargins(100, 50, 100, 50);
                 v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                         RelativeLayout.TRUE);
@@ -85,9 +89,10 @@ public class IFrameLFW extends RelativeLayout {
                 v_PreviousComponent = v_Component;
                 addView(v_Component, v_LayoutParamElement);
             }
-
-
             c_Count++;
         }
+
+
     }
+//    }
 }
