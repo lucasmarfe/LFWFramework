@@ -1,5 +1,11 @@
 package com.felipe.lucas.lfwframework.Screen;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 
@@ -27,6 +33,9 @@ public class BaseLoginScreen extends BaseScreen {
         m_IFrame = new IFrameLFW(m_Context);
         m_IFrame.setGravity(Gravity.CENTER);
         m_IFrame.setBackgroundResource(R.drawable.login_screen_drawble);
+        //TextDrawable v_TextDrawable = new TextDrawable("Login");
+        //v_TextDrawable.setLevel(4000);
+        //m_IFrame.setBackground(v_TextDrawable);
         m_IFrame.clear();
         m_inUserName = new InputLFW(m_Context, "Nome de usuário", true);
         m_inUserName.setTextSize(18);
@@ -39,5 +48,46 @@ public class BaseLoginScreen extends BaseScreen {
         m_IFrame.add(m_inPassword);
         m_IFrame.add(m_btnLogin);
 
+    }
+
+
+    class TextDrawable extends Drawable {
+
+        private final String text;
+        private final Paint paint;
+
+        public TextDrawable (String text) {
+
+            this.text = text;
+
+            this.paint = new Paint();
+            paint.setColor(Color.BLACK);
+            paint.setTextSize(35f);
+            paint.setAntiAlias(true);
+            paint.setFakeBoldText(true);
+            paint.setShadowLayer(6f, 0, 0, Color.BLACK);
+            paint.setStyle(Paint.Style.FILL);
+            paint.setTextAlign(Paint.Align.CENTER);
+        }
+
+        @Override
+        public void draw (Canvas canvas) {
+            canvas.drawText(text, 0, 0, paint);
+        }
+
+        @Override
+        public void setAlpha (int alpha) {
+            paint.setAlpha(alpha);
+        }
+
+        @Override
+        public void setColorFilter (ColorFilter cf) {
+            paint.setColorFilter(cf);
+        }
+
+        @Override
+        public int getOpacity () {
+            return PixelFormat.TRANSLUCENT;
+        }
     }
 }

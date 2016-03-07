@@ -18,19 +18,19 @@ public class BaseScreenWithHeader extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.base_screen_with_header);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        m_IFrame = new IFrameLFW(m_Context);
+        //setContentView(R.layout.base_screen_with_header_2);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //m_IFrame = new IFrameLFW(m_Context);
     }
 
-    @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
-        Intent v_Intent = new Intent(getApplicationContext(), BaseMenuScreen.class);
-        v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        getApplicationContext().startActivity(v_Intent);
-        return true;
-    }
+//    @Override
+//    public boolean onOptionsItemSelected (MenuItem item) {
+//        Intent v_Intent = new Intent(getApplicationContext(), BaseMenuScreen.class);
+//        v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        getApplicationContext().startActivity(v_Intent);
+//        return true;
+//    }
 
     public void addOnScreen (IFrameLFW p_IFrame) {
         RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams

@@ -13,6 +13,6 @@ public class BaseFormScreen extends BaseScreenWithHeader {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        m_IFrame.clear();
+        //m_IFrame.clear();
     }
 }
