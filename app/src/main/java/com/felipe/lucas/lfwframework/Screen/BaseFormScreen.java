@@ -1,5 +1,6 @@
 package com.felipe.lucas.lfwframework.Screen;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
@@ -15,4 +16,7 @@ public class BaseFormScreen extends BaseScreenWithHeader {
         super.onCreate(savedInstanceState);
         //m_IFrame.clear();
     }
+//    protected void onCreate(Bundle savedInstanceState, Context p_Context) {
+//        super.onCreate(savedInstanceState, p_Context);
+//    }
 }

@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
+import com.felipe.lucas.lfwframework.Components.ButtonLFW;
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.Components.InputLFW;
 import com.felipe.lucas.lfwframework.R;
@@ -17,12 +18,14 @@ import com.felipe.lucas.lfwframework.Screen.BaseFormScreen;
  * Created by lucas on 02/03/2016.
  */
 public class ProductionOrderFormScreen extends BaseFormScreen {
-    IFrameLFW m_IFrame;
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //super.onCreate(savedInstanceState, getApplicationContext());
 
-        setContentView(R.layout.base_screen_with_header);
+        //setContentView(R.layout.base_screen_with_header);
+
         //setupToolbar(toolbar);
 //        m_IFrame = new IFrameLFW(getApplicationContext());
 //        InputLFW m_InputTest = new InputLFW(getApplicationContext(),"Input teste",true);
@@ -51,19 +54,21 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
          setContentView(v_relative);
          *////////
 
-        RelativeLayout v_relative = (RelativeLayout) findViewById(R.id
-                .base_screen_with_header_layout_ID);
-        m_IFrame = new IFrameLFW(getApplicationContext());
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        v_relative.removeView(toolbar);
-        setupToolbar(toolbar);
-        m_IFrame.add(toolbar);
+//        RelativeLayout v_relative = (RelativeLayout) findViewById(R.id
+//                .base_screen_with_header_layout_ID);
+//        m_IFrame = new IFrameLFW(getApplicationContext());
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        v_relative.removeView(toolbar);
+//        setupToolbar(toolbar);
+//        m_IFrame.add(toolbar);
         InputLFW m_InputTest = new InputLFW(getApplicationContext(), "Input teste", true);
-        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
-                (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
-                        .WRAP_CONTENT);
+//        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
+//                (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
+//                        .WRAP_CONTENT);
         m_IFrame.add(m_InputTest);
-        setupToolbar(toolbar);
+        ButtonLFW v_butt = new ButtonLFW(getApplicationContext(), "Teste", true);
+        m_IFrame.add(v_butt);
+        //setupToolbar(toolbar);
         //m_IFrame.add(m_InputTest);
         m_IFrame.builScreen();
 
@@ -93,22 +98,7 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
 //        //m_IFrame.clear();
     }
 
-    private void setupToolbar (Toolbar toolbar) {
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Título");
-        setSupportActionBar(toolbar);
-        // Show menu icon
-        final ActionBar ab = getSupportActionBar();
-        //ab.setHomeButtonEnabled(true);
-        ab.setHomeAsUpIndicator(R.drawable.ic_home_black_24dp);
-        ab.setDisplayHomeAsUpEnabled(true);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu (Menu menu) {
-        getMenuInflater().inflate(R.menu.base_screen_with_header, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
