@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/list_item_relative_ID"
+                android:layout_width="fill_parent"
+                android:layout_height="75dip"
+                android:descendantFocusability="afterDescendants"
+                android:padding="3dip">
+
+    <CheckBox
+        android:id="@+id/checkbox_result"
+        android:textColorHighlight="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:focusable="false"/>
+
+    <!-- Item Name -->
+    <TextView
+        android:id="@+id/identificador_result_item"
+
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:paddingLeft="3dip"
+        android:layout_toRightOf="@+id/checkbox_result"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="Identificador"
+        />
+
+    <TextView
+        android:id="@+id/info1_result_item"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:paddingLeft="3dip"
+        android:layout_toRightOf="@+id/checkbox_result"
+        android:layout_below="@+id/identificador_result_item"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="Info1"
+        />
+
+    <TextView
+        android:id="@+id/info2_result_item"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:paddingLeft="3dip"
+        android:layout_toRightOf="@+id/checkbox_result"
+        android:layout_below="@+id/info1_result_item"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="Info2"
+        />
+
+    <ImageView
+        android:id="@+id/image_result_item"
+        android:layout_width="30dip"
+        android:paddingRight="10dip"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="30dip"
+        android:text="S"/>
+</RelativeLayout>

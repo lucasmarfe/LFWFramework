@@ -1,6 +1,5 @@
 package com.felipe.lucas.lfwframework.Components;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
@@ -16,12 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.felipe.lucas.lfwframework.R;
-import com.felipe.lucas.lfwframework.Screen.BaseLoginScreen;
 import com.felipe.lucas.lfwframework.Screen.BaseMenuScreen;
 import com.felipe.lucas.lfwframework.Screen.BaseScreenWithHeader;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lucas on 04/02/2016.
@@ -32,25 +29,18 @@ public class MenuLFW extends ListView {
         super(p_Context);
         FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
                 .LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-        setBackgroundColor(ContextCompat.getColor(p_Context, R.color.yellow_Scheme));
+        setBackgroundColor(ContextCompat.getColor(p_Context, R.color.menu_background));
+        setDividerHeight(10);
         setLayoutParams(m_LayoutParams);
         setClickable(true);
     }
 
-    public void setMenuItens (Context p_Context, String[] p_MenuItemList) {
-        ArrayList<ItemMenuLFW> v_ItemMenuList = new ArrayList<ItemMenuLFW>();
-        v_ItemMenuList.add(new ItemMenuLFW("Menu1", BaseScreenWithHeader.class));
-        v_ItemMenuList.add(new ItemMenuLFW("Menu2", BaseMenuScreen.class));
-        v_ItemMenuList.add(new ItemMenuLFW("Menu3", BaseMenuScreen.class));
-
-        ItemMenuLFWAdapter v_Adapter = new ItemMenuLFWAdapter(p_Context, R.layout.list_item,
-                v_ItemMenuList);
-
+    public void setMenuItens (Context p_Context, ArrayList<ItemMenuLFW> p_MenuItemList) {
+        ItemMenuLFWAdapter v_Adapter = new ItemMenuLFWAdapter(p_Context, R.layout.list_item_menu,
+                p_MenuItemList);
         setAdapter(v_Adapter);
-
         setOnItemClickListener(new OnItemClickListenerMenuLFW());
     }
-
 }
 
 class OnItemClickListenerMenuLFW implements AdapterView.OnItemClickListener {
@@ -84,7 +74,7 @@ class ItemMenuLFWAdapter extends ArrayAdapter<ItemMenuLFW> {
         if (v == null) {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context
                     .LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.list_item, null);
+            v = inflater.inflate(R.layout.list_item_menu, null);
         }
         ItemMenuLFW i = objects.get(position);
 

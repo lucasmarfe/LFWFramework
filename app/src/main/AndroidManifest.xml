@@ -7,14 +7,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Test_Screens.ProductionOrderFormScreen">
+        <activity android:name=".Test_Screens.MenuPrincipalScreen">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
             <action android:name="android.intent.action.DEFAULT" />
         </intent-filter>
         </activity>
-        <activity android:name=".Screen.BaseScreenWithHeader"></activity>
+        <activity android:name=".Test_Screens.ProductionOrderFormScreen"></activity>
+        <activity android:name=".Test_Screens.ProductionOrderResultsScreen"></activity>
+        <activity android:name=".Test_Screens.LoginScreen"></activity>
     </application>
 
 </manifest>

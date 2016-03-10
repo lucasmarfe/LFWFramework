@@ -100,13 +100,15 @@ public class BaseScreen extends AppCompatActivity {
     }
 
     public void setDefaultBackgroundColor () {
-        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(m_Context, R.color
+        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor
+                (getApplicationContext(), R.color
                 .background));
     }
 
     public void setBackgroundColor(int p_IdColor)
     {
-        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(m_Context, p_IdColor));
+        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor
+                (getApplicationContext(), p_IdColor));
     }
 
 }

@@ -16,73 +16,40 @@ import android.widget.Toast;
 
 import com.felipe.lucas.lfwframework.Components.CustomToolbar;
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
+import com.felipe.lucas.lfwframework.Components.ItemMenuLFW;
 import com.felipe.lucas.lfwframework.Components.MenuLFW;
 import com.felipe.lucas.lfwframework.Components.ToolbarLFW;
 import com.felipe.lucas.lfwframework.R;
+import com.felipe.lucas.lfwframework.Test_Screens.LoginScreen;
+import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderFormScreen;
+import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderResultsScreen;
+
+import java.util.ArrayList;
 
 /**
  * Created by lucas on 03/02/2016.
  */
-public class BaseMenuScreen extends BaseScreen {
+public class BaseMenuScreen extends BaseScreenWithHeader {
 
-    MenuLFW m_Menu;
-    String contacts[] = {"Ajay", "Sachin", "Sumit", "Tarun", "Yogesh"};
+    public MenuLFW m_Menu;
+    public ArrayList<ItemMenuLFW> m_ItemMenuList = new ArrayList<ItemMenuLFW>();
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         m_Context = getApplicationContext();
-        m_IFrame = new IFrameLFW(m_Context);
-        //Toolbar mToolbar = (Toolbar) findViewById(R.layout.Toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-        // getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar
-        //        .DISPLAY_SHOW_CUSTOM);
-        //getSupportActionBar().show();
-
-
-//        SpannableString s = new SpannableString("My Title");
-//        s.setSpan(new TypefaceSpan(this, "MyTypeface.otf"), 0, s.length(),
-//                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//
-//        // Update the action bar title with the TypefaceSpan instance
-//        ActionBar actionBar = getActionBar();
-//        actionBar.setTitle(s);
-
-        ToolbarLFW myToolbar = new ToolbarLFW(getApplicationContext(), "Menu");
-
-        //Toolbar myToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar2);
-        //CustomToolbar myToolbar = new CustomToolbar(getApplicationContext());
-        //myToolbar.setm
-        //myToolbar.setTitle("Teste");
-        setSupportActionBar(myToolbar);
-        //myToolbar.setNavigationIcon(R.drawable);
-        //myToolbar.inflateMenu(R.menu.menu_actionbar)
-        //ActionBar ab = getSupportActionBar();
-        //ab.setDisplayHomeAsUpEnabled(true);
-
-        m_IFrame.add(myToolbar);
-        //getSupportActionBar().show();
         m_Menu = new MenuLFW(m_Context);
-        m_Menu.setMenuItens(m_Context, contacts);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout
-//                .simple_list_item_1, contacts);
-//        m_Menu.setAdapter(adapter);
-//        registerForContextMenu(m_Menu);
-        m_IFrame.add(m_Menu);
-        m_IFrame.builScreen();
-        addOnScreen(m_IFrame);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu (Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_actionbar, menu);
-        menu.add(Menu.NONE, 2, 100, "History").setIcon(R.drawable.ic_first_page_white_36dp)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        //return(super.onCreateOptionsMenu(menu));
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu (Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        //getMenuInflater().inflate(R.menu.menu_actionbar, menu);
+//        menu.add(Menu.NONE, 2, 100, "History").setIcon(R.drawable.ic_first_page_white_36dp)
+//                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+//        //return(super.onCreateOptionsMenu(menu));
+//        return true;
+//    }
 
 //    @Override
 //    public boolean onPrepareOptionsMenu(Menu menu) {

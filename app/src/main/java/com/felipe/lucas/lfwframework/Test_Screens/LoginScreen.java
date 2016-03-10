@@ -19,7 +19,7 @@ public class LoginScreen extends BaseLoginScreen {
         v_CheckBox.setItensContent(getApplicationContext(), Arrays.asList("PRD",
                 "HOM"));
         m_IFrame.addAfterComponent(v_CheckBox, m_inPassword);
-        m_IFrame.builScreen();
+        m_IFrame.builScreen(this.getClass(), null);
         addOnScreen(m_IFrame);
     }
 }

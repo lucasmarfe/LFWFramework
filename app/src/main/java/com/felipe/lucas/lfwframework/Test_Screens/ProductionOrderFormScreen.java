@@ -70,7 +70,7 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
         m_IFrame.add(v_butt);
         //setupToolbar(toolbar);
         //m_IFrame.add(m_InputTest);
-        m_IFrame.builScreen();
+        m_IFrame.builScreen(ProductionOrderFormScreen.class, "Filtrar OP");
 
         setContentView(m_IFrame);
 

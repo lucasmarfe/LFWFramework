@@ -1,15 +1,15 @@
 package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
-import android.view.Gravity;
-import android.view.LayoutInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
+import com.felipe.lucas.lfwframework.Screen.BaseScreenWithHeader;
+
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lucas on 15/01/2016.
@@ -41,10 +41,20 @@ public class IFrameLFW extends RelativeLayout {
     }
 
     public void clear () {
-        m_OrderedObjectsList.clear();
+        if(! m_OrderedObjectsList.isEmpty() && m_OrderedObjectsList.get(0) instanceof Toolbar)
+        {
+            Toolbar v_Toolbar = (Toolbar) m_OrderedObjectsList.get(0);
+            m_OrderedObjectsList.clear();
+            m_OrderedObjectsList.add(v_Toolbar);
+
+        }
+        else {
+            m_OrderedObjectsList.clear();
+        }
     }
 
-    public void builScreen () {
+    public void builScreen (Class<?> p_CallerClass, String p_Title) {
+        boolean v_IsBaseScreenWithHeaderChild = checkIfCallerClassIsHeaderChild(p_CallerClass);
         int c_Count = 0;
         View v_PreviousComponent = null;
 
@@ -69,8 +79,7 @@ public class IFrameLFW extends RelativeLayout {
                 v_LayoutParamElement = new RelativeLayout.LayoutParams
                         (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                                 .WRAP_CONTENT);
-                v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
-                        RelativeLayout.TRUE);
+
             }
 //            if(v_Component instanceof SelectLFW)
 //            {
@@ -81,6 +90,16 @@ public class IFrameLFW extends RelativeLayout {
                 v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
 
             }
+            if(! v_IsBaseScreenWithHeaderChild)
+            {
+                v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
+                        RelativeLayout.TRUE);
+            }
+            else if(v_Component instanceof Toolbar)
+            {
+                ((Toolbar)v_Component).setTitle(p_Title);
+            }
+
 
             if (v_Component instanceof CheckBoxLFW) {
                 v_PreviousComponent = ((CheckBoxLFW) v_Component).getLayoutParams
@@ -93,6 +112,10 @@ public class IFrameLFW extends RelativeLayout {
         }
 
 
+    }
+
+    private boolean checkIfCallerClassIsHeaderChild (Class<?> p_CallerClass) {
+        return BaseScreenWithHeader.class.isAssignableFrom(p_CallerClass);
     }
 //    }
 }

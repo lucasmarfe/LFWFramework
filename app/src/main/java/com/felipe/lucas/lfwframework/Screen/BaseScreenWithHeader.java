@@ -17,6 +17,7 @@ import com.felipe.lucas.lfwframework.R;
 public class BaseScreenWithHeader extends AppCompatActivity {
     public Context m_Context;
     public IFrameLFW m_IFrame;
+    public String m_Title = null;
 
     //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class BaseScreenWithHeader extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {//, Context p_Context) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.base_screen_with_header);
         RelativeLayout v_relative = (RelativeLayout) findViewById(R.id
                 .base_screen_with_header_layout_ID);
@@ -44,12 +46,12 @@ public class BaseScreenWithHeader extends AppCompatActivity {
         v_relative.removeView(toolbar);
         setupToolbar(toolbar);
         m_IFrame.add(toolbar);
-
+        setDefaultBackgroundColor();
     }
 
     private void setupToolbar (Toolbar toolbar) {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Título");
+        toolbar.setTitle(m_Title != null ? m_Title : "");
         setSupportActionBar(toolbar);
         // Show menu icon
         final ActionBar ab = getSupportActionBar();
@@ -80,11 +82,13 @@ public class BaseScreenWithHeader extends AppCompatActivity {
     }
 
     public void setDefaultBackgroundColor () {
-        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(m_Context, R.color
+        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor
+                (getApplicationContext(), R.color
                 .background));
     }
 
     public void setBackgroundColor (int p_IdColor) {
-        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(m_Context, p_IdColor));
+        getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor
+                (getApplicationContext(), p_IdColor));
     }
 }
