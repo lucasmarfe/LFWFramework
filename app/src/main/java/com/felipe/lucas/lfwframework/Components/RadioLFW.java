@@ -29,11 +29,11 @@ public class RadioLFW extends RadioGroup {
     }
 
     public RadioLFW (Context p_Context, String p_LabelText, boolean p_IsHorizontal, boolean
-            p_IsActive) {
+            p_IsActive, boolean p_ShowColon) {
         super(p_Context);
         m_LocalContext = p_Context;
         setId(UtilLFW.getAvailableID());
-        m_Label = p_LabelText;
+        m_Label = p_LabelText + (p_ShowColon ? " : " : " ");
         setOrientation(p_IsHorizontal ? RadioGroup.HORIZONTAL : RadioGroup.VERTICAL);
         setActivated(p_IsActive);
 

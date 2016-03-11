@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.felipe.lucas.lfwframework.Screen.BaseScreenWithHeader;
 
@@ -75,7 +76,7 @@ public class IFrameLFW extends RelativeLayout {
                 v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                         RelativeLayout.TRUE);
             }
-            if (v_Component instanceof EditText) {
+            if (v_Component instanceof EditText || v_Component instanceof TextView) {
                 v_LayoutParamElement = new RelativeLayout.LayoutParams
                         (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                                 .WRAP_CONTENT);
@@ -94,8 +95,7 @@ public class IFrameLFW extends RelativeLayout {
             {
                 v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                         RelativeLayout.TRUE);
-            }
-            else if(v_Component instanceof Toolbar)
+            } else if (p_Title != null && v_Component instanceof Toolbar)
             {
                 ((Toolbar)v_Component).setTitle(p_Title);
             }
@@ -103,7 +103,7 @@ public class IFrameLFW extends RelativeLayout {
 
             if (v_Component instanceof CheckBoxLFW) {
                 v_PreviousComponent = ((CheckBoxLFW) v_Component).getLayoutParams
-                        (v_PreviousComponent.getId(), this);
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else if (v_Component instanceof LabelValueLFW) {
                 v_PreviousComponent = ((LabelValueLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), this);

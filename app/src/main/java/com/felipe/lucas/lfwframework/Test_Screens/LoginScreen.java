@@ -15,10 +15,16 @@ public class LoginScreen extends BaseLoginScreen {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RadioLFW v_CheckBox = new RadioLFW(getApplicationContext(), "Ambiente", true, true);
+        m_Title.setText("Login");
+        CheckBoxLFW v_CheckBox2 = new CheckBoxLFW(getApplicationContext(), "Ambiente", "PRD",
+                true, true);
+        RadioLFW v_CheckBox = new RadioLFW(getApplicationContext(), "Ambiente", true, true, true);
         v_CheckBox.setItensContent(getApplicationContext(), Arrays.asList("PRD",
                 "HOM"));
+        v_CheckBox.setPadding(80, 0, 0, 0);
+        v_CheckBox2.setLabelPadding(90, 0, 0, 0);
         m_IFrame.addAfterComponent(v_CheckBox, m_inPassword);
+        m_IFrame.addAfterComponent(v_CheckBox2, v_CheckBox);
         m_IFrame.builScreen(this.getClass(), null);
         addOnScreen(m_IFrame);
     }

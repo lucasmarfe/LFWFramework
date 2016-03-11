@@ -40,7 +40,7 @@ public class BaseScreen extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         m_Context=getApplicationContext();
-        setDefaultBackgroundColor();//getResources().getColor(R.color.background));
+        //setDefaultBackgroundColor();//getResources().getColor(R.color.background));
         //setContentView(R.layout.base_screen);
         IFrameLFW v_IFrame = new IFrameLFW(m_Context);
         //RelativeLayout mRlayout = (RelativeLayout) findViewById(R.id.relativeBaseScreenId);
@@ -95,8 +95,9 @@ public class BaseScreen extends AppCompatActivity {
     }
 
     public void addOnScreen (IFrameLFW p_IFrame) {
-        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-        setContentView(p_IFrame, v_LayoutParamElement);
+//        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
+// (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+        setContentView(p_IFrame);//, v_LayoutParamElement);
     }
 
     public void setDefaultBackgroundColor () {
