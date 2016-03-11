@@ -104,6 +104,9 @@ public class IFrameLFW extends RelativeLayout {
             if (v_Component instanceof CheckBoxLFW) {
                 v_PreviousComponent = ((CheckBoxLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), this);
+            } else if (v_Component instanceof LabelValueLFW) {
+                v_PreviousComponent = ((LabelValueLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), this);
             } else {
                 v_PreviousComponent = v_Component;
                 addView(v_Component, v_LayoutParamElement);

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.felipe.lucas.lfwframework.Components.ButtonLFW;
 import com.felipe.lucas.lfwframework.Components.ItemMenuLFW;
 import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
+import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseFilterScreen;
 
 /**
@@ -33,6 +34,12 @@ public class ProductionOrderResultsScreen extends BaseFilterScreen {
         m_IFrame.add(m_FilterFrame);
         ButtonLFW v_ButtonPrint = new ButtonLFW(getApplicationContext(), "Imprimir", true);
         m_IFrame.add(v_ButtonPrint);
+        LabelValueLFW v_LabelValue = new LabelValueLFW(getApplicationContext(), "Label", "valor",
+                true);
+        m_IFrame.add(v_LabelValue);
+        LabelValueLFW v_LabelValue2 = new LabelValueLFW(getApplicationContext(), "Label2",
+                "valor2", false);
+        m_IFrame.add(v_LabelValue2);
         m_IFrame.builScreen(this.getClass(), "Ordem de Produção");
         addOnScreen(m_IFrame);
         //m_FilterFrame.setOnItemClickListener(new OnItemClickListenerPOResultsLFW());

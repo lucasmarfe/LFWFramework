@@ -1,34 +1,36 @@
 package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 /**
- * Created by lucas on 25/01/2016.
+ * Created by lucas on 10/03/2016.
  */
-public class CheckBoxLFW extends CheckBox {
-    private String m_LabelText;
+public class LabelValueLFW extends TextView {
+    TextView m_Value;
+    Boolean m_ShowColon;
 
-    TextView m_LabelTextView;
-
-    public CheckBoxLFW (Context p_Context) {
-        super(p_Context);
+    public LabelValueLFW (Context context) {
+        super(context);
     }
 
-    public CheckBoxLFW (Context p_Context, String p_LabelText, String p_Text, boolean p_Checked) {
+    public LabelValueLFW (Context p_Context, String p_Label, String p_Value, Boolean p_ShowColon) {
         super(p_Context);
-        setText(p_Text);
-        setChecked(p_Checked);
+        String v_Colon = p_ShowColon ? " : " : " ";
+        setText(p_Label + v_Colon);
         setId(UtilLFW.getAvailableID());
-        m_LabelTextView = new TextView(p_Context);
-        m_LabelTextView.setText(p_LabelText);
-        m_LabelTextView.setId(UtilLFW.getAvailableID());
+        setTextSize(15);
+        setPadding(10, 0, 0, 0);
+        m_Value = new TextView(p_Context);
+        m_Value.setTextSize(15);
+        m_Value.setText(p_Value);
+        m_Value.setId(UtilLFW.getAvailableID());
+        m_ShowColon = p_ShowColon;
+
     }
 
     public View getLayoutParams (int p_PreviousComponentId, IFrameLFW p_IFrame) {
@@ -37,19 +39,17 @@ public class CheckBoxLFW extends CheckBox {
                 (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
-        m_LabelTextView.setTextSize(18);
-        m_LabelTextView.setLayoutParams(v_LayoutParamElement);
-        p_IFrame.addView(m_LabelTextView);
+        setLayoutParams(v_LayoutParamElement);
+        p_IFrame.addView(this);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
                 RelativeLayout.LayoutParams
                 (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                         .WRAP_CONTENT);
+        //v_LayoutParamElement2.addRule(RelativeLayout.BELOW, this.getId());
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
-        v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, m_LabelTextView.getId());
-
-        this.setLayoutParams(v_LayoutParamElement2);
-        p_IFrame.addView(this);
-        return m_LabelTextView;
+        v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, getId());
+        m_Value.setLayoutParams(v_LayoutParamElement2);
+        p_IFrame.addView(m_Value);
+        return this;
     }
-
 }

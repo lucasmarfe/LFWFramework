@@ -25,9 +25,9 @@ public class MenuPrincipalScreen extends BaseMenuScreen {
     private void buildOptions () {
         m_ItemMenuList.add(new ItemMenuLFW("Login", LoginScreen.class));
         m_ItemMenuList.add(new ItemMenuLFW("Filtrar Ordem de produção",
+                ProductionOrderFormScreen.class));
+        m_ItemMenuList.add(new ItemMenuLFW("Resultados Ordem Produção",
                 ProductionOrderResultsScreen.class));
-        m_ItemMenuList.add(new ItemMenuLFW("Resultados Ordem Produção", ProductionOrderFormScreen
-                .class));
         m_Menu.setMenuItens(m_Context, m_ItemMenuList);
     }
 }
