@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <shape>
+            <solid android:color="@android:color/white"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+    <item
+        android:left="50dp"
+        android:right="50dp"
+        android:bottom="450dp">
+        <bitmap android:src="@drawable/login_title"></bitmap>
+    </item>
+    <item
+        android:top="180dp"
+        android:bottom="110dp"
+        >
+        <shape
+            android:shape="rectangle"
+            >
+            <solid
+                android:color="#b5b5b7"
+                />
+            <size
+                android:height="3px"
+                />
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+</layer-list>
