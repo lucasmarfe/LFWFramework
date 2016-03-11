@@ -71,9 +71,6 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
 //        setupToolbar(toolbar);
 //        m_IFrame.add(toolbar);
         InputLFW m_InputTest = new InputLFW(getApplicationContext(), "Input teste", true);
-//        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
-//                (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
-//                        .WRAP_CONTENT);
         m_IFrame.add(m_InputTest);
         LabelValueLFW v_LabelValue = new LabelValueLFW(getApplicationContext(), "Label", "valor",
                 true);
