@@ -31,45 +31,6 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //super.onCreate(savedInstanceState, getApplicationContext());
-
-        //setContentView(R.layout.base_screen_with_header);
-
-        //setupToolbar(toolbar);
-//        m_IFrame = new IFrameLFW(getApplicationContext());
-//        InputLFW m_InputTest = new InputLFW(getApplicationContext(),"Input teste",true);
-//        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
-//                (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
-//                        .MATCH_PARENT);
-//        //v_LayoutParamElement.addRule(RelativeLayout.BELOW, R.id.toolbar);
-//        m_IFrame.addView(m_InputTest, v_LayoutParamElement);
-//        //m_IFrame.builScreen();
-//
-//       FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
-//                .LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-//        addContentView(m_IFrame, m_LayoutParams);
-        //setContentView(R.layout.base_screen_with_header);
-
-        /*******OK
-         RelativeLayout v_relative = (RelativeLayout) findViewById(R.id
-         .base_screen_with_header_layout_ID);
-         InputLFW m_InputTest = new InputLFW(getApplicationContext(),"Input teste",true);
-         RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
-         (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
-         .WRAP_CONTENT);
-         v_LayoutParamElement.addRule(RelativeLayout.BELOW, R.id.toolbar);
-         v_relative.addView(m_InputTest, v_LayoutParamElement);
-         setupToolbar();
-         setContentView(v_relative);
-         *////////
-
-//        RelativeLayout v_relative = (RelativeLayout) findViewById(R.id
-//                .base_screen_with_header_layout_ID);
-//        m_IFrame = new IFrameLFW(getApplicationContext());
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        v_relative.removeView(toolbar);
-//        setupToolbar(toolbar);
-//        m_IFrame.add(toolbar);
         InputLFW m_InputTest = new InputLFW(getApplicationContext(), "Input teste", true);
         m_IFrame.add(m_InputTest);
         LabelValueLFW v_LabelValue = new LabelValueLFW(getApplicationContext(), "Label", "valor",
