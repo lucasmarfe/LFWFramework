@@ -41,7 +41,6 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
         m_IFrame.add(v_LabelValue2);
         ButtonLFW v_butt = new ButtonLFW(getApplicationContext(), "Teste", true);
         m_IFrame.add(v_butt);
-
         ItemResultLFW v_ItemResultLFW = new ItemResultLFW("OP Ident1", "Data1", "Material1",
                 Color.GREEN, ProductionOrderFormScreen.class);
         ItemResultLFW v_ItemResultLFW2 = new ItemResultLFW("OP Ident2", "Data2", "Material2",
