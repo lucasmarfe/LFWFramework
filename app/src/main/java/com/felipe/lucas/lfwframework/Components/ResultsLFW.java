@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,14 +35,27 @@ import java.util.ArrayList;
  */
 public class ResultsLFW extends ListView {
 
+    private Context m_Context;
+
     public ResultsLFW (Context p_Context) {
         super(p_Context);
+        m_Context = p_Context;
         setId(UtilLFW.getAvailableID());
         FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
                 .LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
         setBackgroundColor(ContextCompat.getColor(p_Context, R.color.background_results));
         setLayoutParams(m_LayoutParams);
         setClickable(true);
+        setPadding(0, 30, 0, 10);
+    }
+
+    public void setTitle (String p_TitleText) {
+        TextView v_Title = new TextView(m_Context);
+        v_Title.setText(p_TitleText);
+        v_Title.setPadding(0, 10, 0, 10);
+        v_Title.setTextSize(16);
+        v_Title.setTypeface(null, Typeface.BOLD);
+        addHeaderView(v_Title);
     }
 
     public void setResultsItens (Context p_Context, ArrayList<ItemResultLFW> p_ResultsItemList,
@@ -110,7 +124,7 @@ class ItemResultLFWAdapter extends ArrayAdapter<ItemResultLFW> {
             if (v_TextInfo2 != null) {
                 v_TextInfo2.setText(v_ItemResultActual.getItemMenuInfo2());
             }
-            if (v_ImageViewStatus != null) {
+            if (v_ImageViewStatus != null && v_ItemResultActual.getItemStatusColor() != null) {
                 v_ImageViewStatus.setImageBitmap(getCircle(v_ItemResultActual.getItemStatusColor
                         ()));
             }

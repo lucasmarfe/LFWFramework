@@ -30,6 +30,7 @@ public class MenuLFW extends ListView {
         FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
                 .LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
         setBackgroundColor(ContextCompat.getColor(p_Context, R.color.menu_background));
+        setSelector(R.drawable.menu_highlight_config);
         setDividerHeight(10);
         setLayoutParams(m_LayoutParams);
         setClickable(true);
@@ -47,11 +48,8 @@ class OnItemClickListenerMenuLFW implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
-        //onClickLFW(parent, view, position, id);
         Context v_Context = view.getContext();
         ItemMenuLFW o = (ItemMenuLFW) parent.getItemAtPosition(position);
-        //String str = (String) o;//As you are using Default String Adapter
-        Toast.makeText(view.getContext(), o.getItemMenuName(), Toast.LENGTH_SHORT).show();
         Intent v_Intent = new Intent(v_Context, o.m_ItemMenuClass);
         v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         v_Context.startActivity(v_Intent);

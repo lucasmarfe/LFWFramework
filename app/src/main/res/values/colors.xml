@@ -8,10 +8,6 @@
     <color name="red_Scheme">#b56969</color>
     <color name="darkBlue_Scheme">#22264b</color>
     <color name="greyBlue_Scheme">#9fa8a3</color>
-    <color name="background">#C5BEBA</color>
-    <color name="background_results">#B7ADAF</color>
-    <color name="buttonNotPressed">#f2b632</color>
-    <color name="buttonPressed">#22264b</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
 
@@ -29,5 +25,15 @@
 
 
     <color name="toolbar_background">#AA4B41</color>
-    <color name="menu_background">#C5BEBA</color>
+    <color name="menu_background">#d6cfd5</color>
+    <color name="login_background">#AA4B41</color>
+    <color name="background">#d6cfd5</color>
+    <!--C5BEBA-->
+    <color name="background_results">#B7ADAF</color>
+    <color name="buttonNotPressed">#41a0aa</color>
+    <color name="buttonPressed">#73332C</color>
+    <color name="textButtonPressed">#ffffff</color>
+    <color name="menuItemSelected">#d4a5a0</color>
+    <color name="inputGray">#4c4c4c</color>
+    <color name="inputGrayBright">#e5e5e5</color>
 </resources>

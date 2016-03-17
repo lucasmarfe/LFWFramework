@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.felipe.lucas.lfwframework.Screen.BaseScreenWithHeader;
+import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 import java.util.ArrayList;
 
@@ -55,7 +56,8 @@ public class IFrameLFW extends RelativeLayout {
     }
 
     public void builScreen (Class<?> p_CallerClass, String p_Title) {
-        boolean v_IsBaseScreenWithHeaderChild = checkIfCallerClassIsHeaderChild(p_CallerClass);
+        boolean v_IsBaseScreenWithHeaderChild = UtilLFW.checkIfCallerClassIsHeaderChild
+                (p_CallerClass);
         int c_Count = 0;
         View v_PreviousComponent = null;
 
@@ -72,7 +74,6 @@ public class IFrameLFW extends RelativeLayout {
                     (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
                             .WRAP_CONTENT);
             if (v_Component instanceof ButtonLFW) {
-                v_LayoutParamElement.setMargins(100, 50, 100, 50);
                 v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                         RelativeLayout.TRUE);
             }
@@ -89,6 +90,7 @@ public class IFrameLFW extends RelativeLayout {
 //            }
             if (c_Count != 0) {
                 v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
+                v_Component.setPadding(0, 0, 0, 20);
 
             }
             if(! v_IsBaseScreenWithHeaderChild)
@@ -107,6 +109,9 @@ public class IFrameLFW extends RelativeLayout {
             } else if (v_Component instanceof LabelValueLFW) {
                 v_PreviousComponent = ((LabelValueLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), this);
+            } else if (v_Component instanceof DateLFW) {
+                v_PreviousComponent = ((DateLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else {
                 v_PreviousComponent = v_Component;
                 addView(v_Component, v_LayoutParamElement);
@@ -116,9 +121,4 @@ public class IFrameLFW extends RelativeLayout {
 
 
     }
-
-    private boolean checkIfCallerClassIsHeaderChild (Class<?> p_CallerClass) {
-        return BaseScreenWithHeader.class.isAssignableFrom(p_CallerClass);
-    }
-//    }
 }

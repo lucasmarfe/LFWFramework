@@ -37,10 +37,10 @@ public class BaseLoginScreen extends BaseScreen {
         m_Context = getApplicationContext();
 
         m_IFrame = new IFrameLFW(m_Context);
-        setBackgroundColor(R.color.toolbar_background);
+        setBackgroundColor(R.color.login_background);
         //m_IFrame.setGravity(Gravity.CENTER);
         m_IFrame.clear();
-        m_IFrame.setBackgroundColor(ContextCompat.getColor(m_Context, R.color.toolbar_background));
+        m_IFrame.setBackgroundColor(ContextCompat.getColor(m_Context, R.color.login_background));
         m_Title = new TextView(getApplicationContext());
         m_Title.setId(UtilLFW.getAvailableID());
         m_Title.setPadding(0, 200, 0, 150);
@@ -57,54 +57,17 @@ public class BaseLoginScreen extends BaseScreen {
         m_inUserName = new InputLFW(m_Context, "Nome de usuário", true);
         m_inUserName.setTextSize(20);
         m_inUserName.setWidth(900);
+        m_inUserName.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        m_inUserName.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color
+                .inputGrayBright));
         m_inPassword = new InputPasswordLFW(m_Context, "Senha", true);
+        m_inPassword.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        m_inPassword.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color.inputGrayBright));
         m_inPassword.setTextSize(20);
         m_inPassword.setWidth(900);
         m_btnLogin = new ButtonLFW(m_Context, "Login", true);
         m_IFrame.add(m_inUserName);
         m_IFrame.add(m_inPassword);
         m_IFrame.add(m_btnLogin);
-
-    }
-
-
-    class TextDrawable extends Drawable {
-
-        private final String text;
-        private final Paint paint;
-
-        public TextDrawable (String text) {
-
-            this.text = text;
-
-            this.paint = new Paint();
-            paint.setColor(Color.BLACK);
-            paint.setTextSize(35f);
-            paint.setAntiAlias(true);
-            paint.setFakeBoldText(true);
-            paint.setShadowLayer(6f, 0, 0, Color.BLACK);
-            paint.setStyle(Paint.Style.FILL);
-            paint.setTextAlign(Paint.Align.CENTER);
-        }
-
-        @Override
-        public void draw (Canvas canvas) {
-            canvas.drawText(text, 0, 0, paint);
-        }
-
-        @Override
-        public void setAlpha (int alpha) {
-            paint.setAlpha(alpha);
-        }
-
-        @Override
-        public void setColorFilter (ColorFilter cf) {
-            paint.setColorFilter(cf);
-        }
-
-        @Override
-        public int getOpacity () {
-            return PixelFormat.TRANSLUCENT;
-        }
     }
 }

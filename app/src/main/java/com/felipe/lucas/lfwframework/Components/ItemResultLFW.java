@@ -7,11 +7,11 @@ public class ItemResultLFW {
     public String m_ItemMenuIdentify;
     public String m_ItemMenuInfo1;
     public String m_ItemMenuInfo2;
-    public int m_ItemStatusColor;
+    public Integer m_ItemStatusColor;
     public Class m_ItemMenuClass;
 
     public ItemResultLFW (String p_ItemMenuIdentify, String p_ItemMenuInfo1, String
-            p_ItemMenuInfo2, int p_ItemStatusColor, Class p_ItemMenuClass) {
+            p_ItemMenuInfo2, Integer p_ItemStatusColor, Class p_ItemMenuClass) {
         this.m_ItemMenuIdentify = p_ItemMenuIdentify;
         this.m_ItemMenuInfo1 = p_ItemMenuInfo1;
         this.m_ItemMenuInfo2 = p_ItemMenuInfo2;
@@ -43,7 +43,7 @@ public class ItemResultLFW {
         this.m_ItemMenuInfo2 = m_ItemMenuInfo2;
     }
 
-    public int getItemStatusColor () {
+    public Integer getItemStatusColor () {
         return m_ItemStatusColor;
     }
 

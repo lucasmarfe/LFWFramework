@@ -17,6 +17,7 @@
         <activity android:name=".Test_Screens.ProductionOrderFormScreen"></activity>
         <activity android:name=".Test_Screens.ProductionOrderResultsScreen"></activity>
         <activity android:name=".Test_Screens.LoginScreen"></activity>
+        <activity android:name=".Test_Screens.ProductionOrderDetailsScreen"></activity>
     </application>
 
 </manifest>

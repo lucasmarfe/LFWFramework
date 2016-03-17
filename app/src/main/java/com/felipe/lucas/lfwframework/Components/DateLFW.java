@@ -2,44 +2,63 @@ package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.view.Gravity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.felipe.lucas.lfwframework.R;
+import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderDetailsScreen;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
- * Created by lucas on 25/01/2016.
+ * Created by lucas on 17/03/2016.
  */
-public class CheckBoxLFW extends CheckBox {
-    private int m_PaddingLeft;
-    private int m_PaddingTopp;
-    private int m_PaddingRigth;
-    private int m_PaddingBottom;
+public class DateLFW extends EditText {
+
+    private int m_PaddingLeft = 0;
+
+    private int m_PaddingTopp = 0;
+
+    private int m_PaddingRigth = 0;
+
+    private int m_PaddingBottom = 0;
 
     private String m_LabelText;
 
     TextView m_LabelTextView;
 
-    public CheckBoxLFW (Context p_Context) {
-        super(p_Context);
+    public DateLFW (Context context) {
+        super(context);
     }
 
-    public CheckBoxLFW (Context p_Context, String p_LabelText, String p_Text, boolean p_Checked,
-                        Boolean p_ShowColon) {
+    public DateLFW (Context p_Context, String p_LabelText, Calendar p_Date, Boolean p_ShowColon,
+                    AppCompatActivity p_Activity, boolean p_IsActive) {
         super(p_Context);
-        setText(p_Text);
-        setChecked(p_Checked);
+        m_LabelText = p_LabelText;
         setId(UtilLFW.getAvailableID());
+        setMaxWidth(400);
+        setText(new SimpleDateFormat("dd/MM/yyyy").format(p_Date.getTime()));
+        setTextSize(16);
+        setFocusable(false);
+        setClickable(true);
+        setActivated(p_IsActive);
+        if (p_IsActive) {
+            MyEditTextDatePicker m_Date = new MyEditTextDatePicker(p_Activity, this);
+        }
         m_LabelTextView = new TextView(p_Context);
         setTextColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setTextColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
+        m_LabelTextView.setTextSize(16);
         m_LabelTextView.setId(UtilLFW.getAvailableID());
+        setLabelPadding(0, 0, 0, 30);
     }
+
 
     public View getLayoutParams (int p_PreviousComponentId, boolean
             p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame) {
@@ -48,7 +67,6 @@ public class CheckBoxLFW extends CheckBox {
                 (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
-        m_LabelTextView.setTextSize(18);
         m_LabelTextView.setLayoutParams(v_LayoutParamElement);
         m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
         p_IFrame.addView(m_LabelTextView);

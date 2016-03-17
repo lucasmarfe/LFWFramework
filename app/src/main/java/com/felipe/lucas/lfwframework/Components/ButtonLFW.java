@@ -19,22 +19,12 @@ public class ButtonLFW extends Button {
 
     public ButtonLFW(Context p_Context, String p_Text, boolean p_IsActive) {
         super(p_Context);
-        //Set Id
         setId(UtilLFW.getAvailableID());
-        //Set Text of button
         setText(p_Text);
-        setTextColor(ContextCompat.getColor(p_Context, R.color.darkBlue_Scheme));
-        //Set if button is activated
+        setTextSize(18);
+        setPadding(0, 50, 0, 50);
+        setTextColor(ContextCompat.getColor(p_Context, R.color.textButtonPressed));
         setActivated(p_IsActive);
-
-        //Corder radius
-        //GradientDrawable v_GradientDrawable = new GradientDrawable();
         setBackgroundResource(R.drawable.buttons_properties);
-        //setBackground(v_GradientDrawable);
-        //setBackgroundColor(ContextCompat.getColor(p_Context, R.color.button));
-        //setHighlightColor(ContextCompat.getColor(p_Context, R.color.darkBlue_Scheme));
-
-//        setHintTextColor();
-//        setLinkTextColor();
     }
 }

@@ -21,6 +21,13 @@ public class ProductionOrderResultsScreen extends BaseFilterScreen {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        buildPage();
+        m_IFrame.builScreen(this.getClass(), "Ordem de Produção");
+        addOnScreen(m_IFrame);
+        //m_FilterFrame.setOnItemClickListener(new OnItemClickListenerPOResultsLFW());
+    }
+
+    private void buildPage () {
         ItemResultLFW v_ItemResultLFW = new ItemResultLFW("OP Ident1", "Data1", "Material1",
                 Color.GREEN, ProductionOrderFormScreen.class);
         ItemResultLFW v_ItemResultLFW2 = new ItemResultLFW("OP Ident2", "Data2", "Material2",
@@ -40,9 +47,12 @@ public class ProductionOrderResultsScreen extends BaseFilterScreen {
         LabelValueLFW v_LabelValue2 = new LabelValueLFW(getApplicationContext(), "Label2",
                 "valor2", false);
         m_IFrame.add(v_LabelValue2);
-        m_IFrame.builScreen(this.getClass(), "Ordem de Produção");
-        addOnScreen(m_IFrame);
-        //m_FilterFrame.setOnItemClickListener(new OnItemClickListenerPOResultsLFW());
+        ButtonLFW v_StartOperationButton = new ButtonLFW(getApplicationContext(), "Iniciar " +
+                "Operação", true);
+        ButtonLFW v_EndOperationButton = new ButtonLFW(getApplicationContext(), "Finalizar " +
+                "Operação", false);
+        m_IFrame.add(v_StartOperationButton);
+        m_IFrame.add(v_EndOperationButton);
     }
 }
 
@@ -60,7 +70,8 @@ class OnItemClickListenerPOResultsLFW implements AdapterView.OnItemClickListener
         Context v_Context = view.getContext();
         ItemResultLFW o = (ItemResultLFW) parent.getItemAtPosition(position);
         //String str = (String) o;//As you are using Default String Adapter
-        Toast.makeText(m_Context, o.getItemMenuIdentify(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(m_Context, o.getItemMenuIdentify() != null ? o.getItemMenuIdentify() :
+                "Header", Toast.LENGTH_SHORT).show();
     }
 
     //public abstract void onClickLFW (AdapterView<?> parent, View view, int position, long id);

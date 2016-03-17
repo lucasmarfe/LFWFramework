@@ -1,10 +1,13 @@
 package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.felipe.lucas.lfwframework.R;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 /**
@@ -25,7 +28,10 @@ public class LabelValueLFW extends TextView {
         setId(UtilLFW.getAvailableID());
         setTextSize(15);
         setPadding(10, 0, 0, 0);
+        setTextColor(ColorStateList.valueOf(ContextCompat.getColor(p_Context, R.color.black)));
         m_Value = new TextView(p_Context);
+        m_Value.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(p_Context, R.color
+                .black)));
         m_Value.setTextSize(15);
         m_Value.setText(p_Value);
         m_Value.setId(UtilLFW.getAvailableID());

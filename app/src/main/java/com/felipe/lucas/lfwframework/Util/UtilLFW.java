@@ -1,5 +1,7 @@
 package com.felipe.lucas.lfwframework.Util;
 
+import com.felipe.lucas.lfwframework.Screen.BaseScreenWithHeader;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,5 +22,9 @@ public class UtilLFW {
         while (m_IDsList.contains(v_PossibleID) || v_PossibleID == 0);
         m_IDsList.add(v_PossibleID);
         return v_PossibleID;
+    }
+
+    public static boolean checkIfCallerClassIsHeaderChild (Class<?> p_CallerClass) {
+        return BaseScreenWithHeader.class.isAssignableFrom(p_CallerClass);
     }
 }

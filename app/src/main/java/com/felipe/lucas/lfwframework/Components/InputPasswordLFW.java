@@ -1,9 +1,11 @@
 package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.text.InputType;
 import android.widget.EditText;
 
+import com.felipe.lucas.lfwframework.R;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 /**
@@ -21,5 +23,7 @@ public class InputPasswordLFW extends EditText {
         setInputType(InputType.TYPE_CLASS_TEXT |
                 InputType.TYPE_TEXT_VARIATION_PASSWORD);
         setActivated(p_IsActive);
+        setTextColor(ContextCompat.getColor(p_Context, R.color.black));
+        setHintTextColor(ContextCompat.getColor(p_Context, R.color.inputGray));
     }
 }

@@ -1,15 +1,14 @@
 package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.text.InputType;
-import android.util.Log;
+import android.content.res.ColorStateList;
+import android.support.v4.content.ContextCompat;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.felipe.lucas.lfwframework.R;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +17,7 @@ import java.util.List;
 public class RadioLFW extends RadioGroup {
     private RadioButton[] m_RadioButtonList;
 
-    private String m_Label;
+    private String m_LabelText;
 
     private Context m_LocalContext;
 
@@ -33,9 +32,10 @@ public class RadioLFW extends RadioGroup {
         super(p_Context);
         m_LocalContext = p_Context;
         setId(UtilLFW.getAvailableID());
-        m_Label = p_LabelText + (p_ShowColon ? " : " : " ");
+        m_LabelText = p_LabelText + (p_ShowColon ? ": " : " ");
         setOrientation(p_IsHorizontal ? RadioGroup.HORIZONTAL : RadioGroup.VERTICAL);
         setActivated(p_IsActive);
+        //setBackgroundColor();
 
 //        setOnCheckedChangeListener(new OnCheckedChangeListener() {
 //            int v_Checked = -1;
@@ -55,7 +55,8 @@ public class RadioLFW extends RadioGroup {
         //);
     }
 
-    public void setItensContent (Context p_Context, Enum<?> p_Enum) {
+    public void setItensContent (Context p_Context, Enum<?> p_Enum, boolean
+            p_IsFromBaseScreenWithHeader) {
         int c_Count = 0;
         int v_RadioId = UtilLFW.getAvailableID();
         m_RadioButtonList = new RadioButton[p_Enum.getDeclaringClass().getEnumConstants().length];
@@ -64,12 +65,20 @@ public class RadioLFW extends RadioGroup {
             m_RadioButtonList[c_Count] = new RadioButton(p_Context);
             m_RadioButtonList[c_Count].setText((String) p_Value);
             m_RadioButtonList[c_Count].setId(v_RadioId + c_Count);
+            m_RadioButtonList[c_Count].setTextColor(p_IsFromBaseScreenWithHeader ? ContextCompat
+                    .getColor(m_LocalContext, R.color.black) : ContextCompat.getColor
+                    (m_LocalContext, R.color.white));
+            m_RadioButtonList[c_Count].setButtonTintList(p_IsFromBaseScreenWithHeader ?
+                    ColorStateList.valueOf(ContextCompat
+                            .getColor(m_LocalContext, R.color.black)) : ColorStateList.valueOf
+                    (ContextCompat
+                    .getColor(m_LocalContext, R.color.white)));
             //m_RadioButtonList.add(m_RadioButton);
             addView(m_RadioButtonList[c_Count]);
         }
     }
 
-    public void setItensContent (Context p_Context, List<String> p_StringList) {
+    public void setItensContent (Context p_Context, List<String> p_StringList, boolean p_IsFromBaseScreenWithHeader) {
         int c_Count = 0;
         int v_RadioId = UtilLFW.getAvailableID();
         m_RadioButtonList = new RadioButton[p_StringList.size()];
@@ -77,6 +86,13 @@ public class RadioLFW extends RadioGroup {
             m_RadioButtonList[c_Count] = new RadioButton(p_Context);
             m_RadioButtonList[c_Count].setText(p_Value);
             m_RadioButtonList[c_Count].setId(v_RadioId + c_Count);
+            m_RadioButtonList[c_Count].setTextColor(p_IsFromBaseScreenWithHeader ? ContextCompat
+                    .getColor(m_LocalContext, R.color.black) : ContextCompat.getColor
+                    (m_LocalContext, R.color.white));
+            m_RadioButtonList[c_Count].setButtonTintList(p_IsFromBaseScreenWithHeader ?
+                    ColorStateList.valueOf(ContextCompat
+                    .getColor(m_LocalContext, R.color.black)) : ColorStateList.valueOf(ContextCompat
+                    .getColor(m_LocalContext, R.color.white)));
             //m_RadioButtonList.add(m_RadioButtonList[c_Count]);
             addView(m_RadioButtonList[c_Count]);
             c_Count++;

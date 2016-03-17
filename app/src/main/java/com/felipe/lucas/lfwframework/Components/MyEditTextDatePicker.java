@@ -19,7 +19,7 @@ public class MyEditTextDatePicker implements View.OnClickListener, DatePickerDia
     private Context _context;
 
     public MyEditTextDatePicker (Context context, EditText editTextViewID) {
-        Activity act = (Activity) context;
+        //Activity act = (Activity) context;
         _editText = editTextViewID;
         _editText.setOnClickListener(this);
         _context = context;
