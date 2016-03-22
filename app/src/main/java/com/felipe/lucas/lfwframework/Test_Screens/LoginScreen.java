@@ -22,7 +22,6 @@ public class LoginScreen extends BaseLoginScreen {
         RadioLFW v_CheckBox = new RadioLFW(getApplicationContext(), "Ambiente", true, true, true);
         v_CheckBox.setItensContent(getApplicationContext(), Arrays.asList("PRD",
                 "HOM"), UtilLFW.checkIfCallerClassIsHeaderChild(this.getClass()));
-        v_CheckBox.setPadding(80, 20, 0, 20);
         m_IFrame.addAfterComponent(v_CheckBox, m_inPassword);
         m_btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

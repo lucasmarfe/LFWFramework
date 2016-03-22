@@ -62,32 +62,16 @@ public class IFrameLFW extends RelativeLayout {
         View v_PreviousComponent = null;
 
         for (View v_Component : m_OrderedObjectsList) {
-//            if (v_Component instanceof ToolbarLFW)
-//            {
-//
-//               addView(v_Component);
-//                v_PreviousComponent = v_Component;
-//            }
-//            else {
-
             RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
                     (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
                             .WRAP_CONTENT);
-            if (v_Component instanceof ButtonLFW) {
-                v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
-                        RelativeLayout.TRUE);
-            }
+
             if (v_Component instanceof EditText || v_Component instanceof TextView) {
                 v_LayoutParamElement = new RelativeLayout.LayoutParams
                         (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                                 .WRAP_CONTENT);
 
             }
-//            if(v_Component instanceof SelectLFW)
-//            {
-//                v_LayoutParamElement = new RelativeLayout.LayoutParams(LayoutParams
-// .MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//            }
             if (c_Count != 0) {
                 v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
                 v_Component.setPadding(0, 0, 0, 20);
@@ -111,6 +95,18 @@ public class IFrameLFW extends RelativeLayout {
                         (v_PreviousComponent.getId(), this);
             } else if (v_Component instanceof DateLFW) {
                 v_PreviousComponent = ((DateLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            } else if (v_Component instanceof RadioLFW) {
+                v_PreviousComponent = ((RadioLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            } else if (v_Component instanceof ButtonLFW) {
+                v_PreviousComponent = ((ButtonLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            } else if (v_Component instanceof InputLFW) {
+                v_PreviousComponent = ((InputLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            } else if (v_Component instanceof InputPasswordLFW) {
+                v_PreviousComponent = ((InputPasswordLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else {
                 v_PreviousComponent = v_Component;

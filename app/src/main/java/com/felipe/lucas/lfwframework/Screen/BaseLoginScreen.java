@@ -56,7 +56,6 @@ public class BaseLoginScreen extends BaseScreen {
         m_IFrame.add(m_Title);
         m_inUserName = new InputLFW(m_Context, "Nome de usuário", true);
         m_inUserName.setTextSize(20);
-        m_inUserName.setWidth(900);
         m_inUserName.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         m_inUserName.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color
                 .inputGrayBright));
@@ -64,7 +63,6 @@ public class BaseLoginScreen extends BaseScreen {
         m_inPassword.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         m_inPassword.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color.inputGrayBright));
         m_inPassword.setTextSize(20);
-        m_inPassword.setWidth(900);
         m_btnLogin = new ButtonLFW(m_Context, "Login", true);
         m_IFrame.add(m_inUserName);
         m_IFrame.add(m_inPassword);

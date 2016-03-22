@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Screen;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
@@ -21,4 +22,5 @@ public class BaseFormScreen extends BaseScreenWithHeader {
         super.onCreate(savedInstanceState);
         m_FilterFrame = new ResultsLFW(getApplicationContext());
     }
+
 }

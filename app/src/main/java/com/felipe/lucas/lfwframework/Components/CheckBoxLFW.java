@@ -20,8 +20,6 @@ public class CheckBoxLFW extends CheckBox {
     private int m_PaddingRigth;
     private int m_PaddingBottom;
 
-    private String m_LabelText;
-
     TextView m_LabelTextView;
 
     public CheckBoxLFW (Context p_Context) {

@@ -72,17 +72,5 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
         m_IFrame.add(m_FilterFrame);
     }
 
-    @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
 
-        if (item.getItemId() == R.id.config_item) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Teste item selecionado", Toast
-                    .LENGTH_SHORT);
-            toast.show();
-        } else if (item.getItemId() == android.R.id.home) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Teste home", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        return (super.onOptionsItemSelected(item));
-    }
 }

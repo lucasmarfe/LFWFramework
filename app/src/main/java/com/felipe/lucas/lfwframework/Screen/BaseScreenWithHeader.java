@@ -13,6 +13,10 @@ import android.widget.RelativeLayout;
 
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.R;
+import com.felipe.lucas.lfwframework.Test_Screens.AboutScreen;
+import com.felipe.lucas.lfwframework.Test_Screens.ConfigScreen;
+import com.felipe.lucas.lfwframework.Test_Screens.MenuPrincipalScreen;
+import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderResultsScreen;
 
 public class BaseScreenWithHeader extends AppCompatActivity {
     public Context m_Context;
@@ -66,13 +70,23 @@ public class BaseScreenWithHeader extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected (MenuItem item) {
-//        Intent v_Intent = new Intent(getApplicationContext(), BaseMenuScreen.class);
-//        v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        getApplicationContext().startActivity(v_Intent);
-//        return true;
-//    }
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent v_Intent = new Intent(getApplicationContext(), MenuPrincipalScreen.class);
+            v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(v_Intent);
+        } else if (item.getItemId() == R.id.config_item) {
+            Intent v_Intent = new Intent(getApplicationContext(), ConfigScreen.class);
+            v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(v_Intent);
+        } else if (item.getItemId() == R.id.about_item) {
+            Intent v_Intent = new Intent(getApplicationContext(), AboutScreen.class);
+            v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(v_Intent);
+        }
+        return true;
+    }
 
     public void addOnScreen (IFrameLFW p_IFrame) {
         RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams

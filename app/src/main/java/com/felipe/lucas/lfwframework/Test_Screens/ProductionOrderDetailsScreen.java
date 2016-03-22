@@ -3,6 +3,7 @@ package com.felipe.lucas.lfwframework.Test_Screens;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
@@ -64,5 +65,10 @@ public class ProductionOrderDetailsScreen extends BaseDetailsScreen {
         m_IFrame.add(v_POQuantity);
         m_IFrame.add(v_POInitialDate);
         m_IFrame.add(v_POFinalDate);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
