@@ -1,7 +1,6 @@
-package com.felipe.lucas.lfwframework.Test_Screens;
+package com.felipe.lucas.lfwframework.Test_Screens.OperationScreens;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.felipe.lucas.lfwframework.Components.ButtonLFW;
-import com.felipe.lucas.lfwframework.Components.ItemMenuLFW;
 import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseFilterScreen;

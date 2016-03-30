@@ -1,31 +1,12 @@
 package com.felipe.lucas.lfwframework.Screen;
 
-import android.app.DatePickerDialog;
-import android.app.DialogFragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.felipe.lucas.lfwframework.Components.ButtonLFW;
-import com.felipe.lucas.lfwframework.Components.CheckBoxLFW;
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
-import com.felipe.lucas.lfwframework.Components.InputLFW;
-import com.felipe.lucas.lfwframework.Components.InputPasswordLFW;
-import com.felipe.lucas.lfwframework.Components.MyEditTextDatePicker;
-import com.felipe.lucas.lfwframework.Components.RadioLFW;
-import com.felipe.lucas.lfwframework.Components.SelectLFW;
 import com.felipe.lucas.lfwframework.R;
-import com.felipe.lucas.lfwframework.Util.UtilLFW;
-
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
 
 public class BaseScreen extends AppCompatActivity {
     public Context m_Context;
@@ -71,7 +52,7 @@ public class BaseScreen extends AppCompatActivity {
                 .getTime()));
         m_EditText.setFocusable(false);
         m_EditText.setClickable(true);
-        MyEditTextDatePicker m_Date = new MyEditTextDatePicker(this, m_EditText);
+ DatePickerLFW m_Date = new DatePickerLFW(this, m_EditText);
 
         InputPasswordLFW m_InputPassword = new InputPasswordLFW(m_Context, "Input", true);
         v_IFrame.add(m_Input);

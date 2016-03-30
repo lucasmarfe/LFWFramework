@@ -1,27 +1,16 @@
-package com.felipe.lucas.lfwframework.Test_Screens;
+package com.felipe.lucas.lfwframework.Test_Screens.OperationScreens;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.RelativeLayout;
-import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import com.felipe.lucas.lfwframework.Components.ButtonLFW;
 import com.felipe.lucas.lfwframework.Components.CheckBoxLFW;
-import com.felipe.lucas.lfwframework.Components.IFrameLFW;
-import com.felipe.lucas.lfwframework.Components.InputLFW;
 import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Components.RadioLFW;
-import com.felipe.lucas.lfwframework.Components.ResultsLFW;
-import com.felipe.lucas.lfwframework.R;
 import com.felipe.lucas.lfwframework.Screen.BaseFormScreen;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -53,7 +42,8 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
                 "HOM"), UtilLFW.checkIfCallerClassIsHeaderChild(this.getClass()));
         m_IFrame.add(v_Radio);
 
-        CheckBoxLFW v_CheckBox = new CheckBoxLFW(getApplicationContext(), "Teste", "2", true, true);
+        CheckBoxLFW v_CheckBox = new CheckBoxLFW(getApplicationContext(), "Teste", "2", true,
+                true, true);
         m_IFrame.add(v_CheckBox);
 
         ButtonLFW v_butt = new ButtonLFW(getApplicationContext(), "Teste", true);

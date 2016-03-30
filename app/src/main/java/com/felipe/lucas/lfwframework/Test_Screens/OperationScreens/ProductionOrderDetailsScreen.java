@@ -1,18 +1,15 @@
-package com.felipe.lucas.lfwframework.Test_Screens;
+package com.felipe.lucas.lfwframework.Test_Screens.OperationScreens;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Toast;
 
 import com.felipe.lucas.lfwframework.Components.DateLFW;
 import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
+import com.felipe.lucas.lfwframework.Components.SelectLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseDetailsScreen;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 /**
@@ -24,6 +21,7 @@ public class ProductionOrderDetailsScreen extends BaseDetailsScreen {
     LabelValueLFW v_POQuantity;
     DateLFW v_POInitialDate;
     DateLFW v_POFinalDate;
+    SelectLFW v_SelectTurno;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -60,11 +58,14 @@ public class ProductionOrderDetailsScreen extends BaseDetailsScreen {
                 .getInstance(), true, this, false);
         v_POFinalDate = new DateLFW(getApplicationContext(), "Data fim", Calendar.getInstance(),
                 true, this, false);
+        v_SelectTurno = new SelectLFW(getApplicationContext(), "Turno", true, true);
+        v_SelectTurno.setItensContent(Arrays.asList("Buenos Aires", "Córdoba", "La Plata"));
         m_IFrame.add(v_PONumber);
         m_IFrame.add(v_POMaterial);
         m_IFrame.add(v_POQuantity);
         m_IFrame.add(v_POInitialDate);
         m_IFrame.add(v_POFinalDate);
+        m_IFrame.add(v_SelectTurno);
     }
 
     @Override

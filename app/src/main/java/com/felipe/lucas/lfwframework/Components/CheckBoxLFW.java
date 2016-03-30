@@ -15,10 +15,10 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
  * Created by lucas on 25/01/2016.
  */
 public class CheckBoxLFW extends CheckBox {
-    private int m_PaddingLeft;
-    private int m_PaddingTopp;
-    private int m_PaddingRigth;
-    private int m_PaddingBottom;
+    private int m_PaddingLeft = 0;
+    private int m_PaddingTopp = 0;
+    private int m_PaddingRigth = 0;
+    private int m_PaddingBottom = 0;
 
     TextView m_LabelTextView;
 
@@ -27,11 +27,13 @@ public class CheckBoxLFW extends CheckBox {
     }
 
     public CheckBoxLFW (Context p_Context, String p_LabelText, String p_Text, boolean p_Checked,
-                        Boolean p_ShowColon) {
+                        Boolean p_ShowColon, boolean p_IsActive) {
         super(p_Context);
         setText(p_Text);
         setChecked(p_Checked);
         setId(UtilLFW.getAvailableID());
+        setLabelPadding(0, 8, 0, 8);
+        setActivated(p_IsActive);
         m_LabelTextView = new TextView(p_Context);
         setTextColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setTextColor(ContextCompat.getColor(p_Context, R.color.black));

@@ -14,6 +14,10 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
  * Created by lucas on 10/03/2016.
  */
 public class LabelValueLFW extends TextView {
+    private int m_PaddingLeft;
+    private int m_PaddingTopp;
+    private int m_PaddingRigth;
+    private int m_PaddingBottom;
     TextView m_Value;
     Boolean m_ShowColon;
 
@@ -27,7 +31,7 @@ public class LabelValueLFW extends TextView {
         setText(p_Label + v_Colon);
         setId(UtilLFW.getAvailableID());
         setTextSize(15);
-        setPadding(10, 0, 0, 0);
+        setValuePadding(0, 8, 0, 8);
         setTextColor(ColorStateList.valueOf(ContextCompat.getColor(p_Context, R.color.black)));
         m_Value = new TextView(p_Context);
         m_Value.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(p_Context, R.color
@@ -45,6 +49,7 @@ public class LabelValueLFW extends TextView {
                 (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
+        setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
         setLayoutParams(v_LayoutParamElement);
         p_IFrame.addView(this);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
@@ -54,8 +59,17 @@ public class LabelValueLFW extends TextView {
         //v_LayoutParamElement2.addRule(RelativeLayout.BELOW, this.getId());
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, getId());
+        m_Value.setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
         m_Value.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(m_Value);
         return this;
+    }
+
+    public void setValuePadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
+            p_PaddingBottom) {
+        m_PaddingLeft = p_PaddingLeft;
+        m_PaddingTopp = p_PaddingTop;
+        m_PaddingRigth = p_PaddingRigth;
+        m_PaddingBottom = p_PaddingBottom;
     }
 }

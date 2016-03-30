@@ -1,28 +1,9 @@
 package com.felipe.lucas.lfwframework.Screen;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.felipe.lucas.lfwframework.Components.CustomToolbar;
-import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.Components.ItemMenuLFW;
 import com.felipe.lucas.lfwframework.Components.MenuLFW;
-import com.felipe.lucas.lfwframework.Components.ToolbarLFW;
-import com.felipe.lucas.lfwframework.R;
-import com.felipe.lucas.lfwframework.Test_Screens.LoginScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderFormScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderResultsScreen;
 
 import java.util.ArrayList;
 

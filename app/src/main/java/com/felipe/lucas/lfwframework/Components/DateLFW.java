@@ -9,7 +9,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.felipe.lucas.lfwframework.R;
-import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderDetailsScreen;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 import java.text.SimpleDateFormat;
@@ -48,7 +47,7 @@ public class DateLFW extends EditText {
         setClickable(true);
         setActivated(p_IsActive);
         if (p_IsActive) {
-            MyEditTextDatePicker m_Date = new MyEditTextDatePicker(p_Activity, this);
+            DatePickerLFW m_Date = new DatePickerLFW(p_Activity, this);
         }
         m_LabelTextView = new TextView(p_Context);
         setTextColor(ContextCompat.getColor(p_Context, R.color.black));
@@ -56,7 +55,7 @@ public class DateLFW extends EditText {
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
         m_LabelTextView.setTextSize(16);
         m_LabelTextView.setId(UtilLFW.getAvailableID());
-        setLabelPadding(0, 0, 0, 30);
+        setLabelPadding(0, 8, 0, 8);
     }
 
 
@@ -76,6 +75,7 @@ public class DateLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, m_LabelTextView.getId());
+        setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
         this.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(this);
         return m_LabelTextView;

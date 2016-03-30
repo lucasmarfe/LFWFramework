@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import java.util.Calendar;
+
 /**
  * Created by lucas on 26/01/2016.
  */
-public class MyEditTextDatePicker implements View.OnClickListener, DatePickerDialog
+public class DatePickerLFW implements View.OnClickListener, DatePickerDialog
         .OnDateSetListener {
     EditText _editText;
     private int _day;
@@ -18,7 +20,7 @@ public class MyEditTextDatePicker implements View.OnClickListener, DatePickerDia
     private int _birthYear;
     private Context _context;
 
-    public MyEditTextDatePicker (Context context, EditText editTextViewID) {
+    public DatePickerLFW (Context context, EditText editTextViewID) {
         //Activity act = (Activity) context;
         _editText = editTextViewID;
         _editText.setOnClickListener(this);
@@ -26,7 +28,8 @@ public class MyEditTextDatePicker implements View.OnClickListener, DatePickerDia
     }
 
     @Override
-    public void onDateSet (DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+    public void onDateSet (android.widget.DatePicker view, int year, int monthOfYear, int
+            dayOfMonth) {
         _birthYear = year;
         _month = monthOfYear;
         _day = dayOfMonth;
@@ -35,7 +38,9 @@ public class MyEditTextDatePicker implements View.OnClickListener, DatePickerDia
 
     @Override
     public void onClick (View v) {
-        DatePickerDialog dialog = new DatePickerDialog(_context, this, 2013, 2, 18);
+        DatePickerDialog dialog = new DatePickerDialog(_context, this, Calendar.getInstance().get
+                (Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance
+                ().get(Calendar.DAY_OF_MONTH));
         dialog.show();
 
     }

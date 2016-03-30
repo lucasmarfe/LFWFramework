@@ -60,7 +60,6 @@ public class IFrameLFW extends RelativeLayout {
                 (p_CallerClass);
         int c_Count = 0;
         View v_PreviousComponent = null;
-
         for (View v_Component : m_OrderedObjectsList) {
             RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
                     (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
@@ -70,7 +69,6 @@ public class IFrameLFW extends RelativeLayout {
                 v_LayoutParamElement = new RelativeLayout.LayoutParams
                         (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                                 .WRAP_CONTENT);
-
             }
             if (c_Count != 0) {
                 v_LayoutParamElement.addRule(RelativeLayout.BELOW, v_PreviousComponent.getId());
@@ -85,8 +83,6 @@ public class IFrameLFW extends RelativeLayout {
             {
                 ((Toolbar)v_Component).setTitle(p_Title);
             }
-
-
             if (v_Component instanceof CheckBoxLFW) {
                 v_PreviousComponent = ((CheckBoxLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
@@ -107,6 +103,9 @@ public class IFrameLFW extends RelativeLayout {
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else if (v_Component instanceof InputPasswordLFW) {
                 v_PreviousComponent = ((InputPasswordLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            } else if (v_Component instanceof SelectLFW) {
+                v_PreviousComponent = ((SelectLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else {
                 v_PreviousComponent = v_Component;

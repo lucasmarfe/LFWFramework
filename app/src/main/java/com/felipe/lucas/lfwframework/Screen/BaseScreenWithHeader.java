@@ -13,10 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.felipe.lucas.lfwframework.Components.IFrameLFW;
 import com.felipe.lucas.lfwframework.R;
-import com.felipe.lucas.lfwframework.Test_Screens.AboutScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.ConfigScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.MenuPrincipalScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.ProductionOrderResultsScreen;
+import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 public class BaseScreenWithHeader extends AppCompatActivity {
     public Context m_Context;
@@ -72,21 +69,34 @@ public class BaseScreenWithHeader extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            Intent v_Intent = new Intent(getApplicationContext(), MenuPrincipalScreen.class);
-            v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getApplicationContext().startActivity(v_Intent);
-        } else if (item.getItemId() == R.id.config_item) {
-            Intent v_Intent = new Intent(getApplicationContext(), ConfigScreen.class);
-            v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getApplicationContext().startActivity(v_Intent);
-        } else if (item.getItemId() == R.id.about_item) {
-            Intent v_Intent = new Intent(getApplicationContext(), AboutScreen.class);
-            v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getApplicationContext().startActivity(v_Intent);
+        try {
+            if (item.getItemId() == android.R.id.home) {
+                //Toast.makeText(getApplicationContext(), UtilLFW
+                // .getConfigValueFromConfigAttribute("HomeScreen"),Toast.LENGTH_LONG);
+
+                Intent v_Intent = null;
+                v_Intent = new Intent(getApplicationContext(), Class.forName(UtilLFW
+                        .getConfigValueFromConfigAttribute("HomeScreen").toString()));
+                v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(v_Intent);
+            } else if (item.getItemId() == R.id.config_item) {
+                Intent v_Intent = new Intent(getApplicationContext(), Class.forName(UtilLFW
+                        .getConfigValueFromConfigAttribute("ConfigScreen").toString()));
+                v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(v_Intent);
+            } else if (item.getItemId() == R.id.about_item) {
+                Intent v_Intent = new Intent(getApplicationContext(), Class.forName(UtilLFW
+                        .getConfigValueFromConfigAttribute("AboutScreen").toString()));
+                v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(v_Intent);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         return true;
     }
+
 
     public void addOnScreen (IFrameLFW p_IFrame) {
         RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
