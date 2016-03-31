@@ -92,6 +92,9 @@ public class IFrameLFW extends RelativeLayout {
             } else if (v_Component instanceof DateLFW) {
                 v_PreviousComponent = ((DateLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            } else if (v_Component instanceof HourLFW) {
+                v_PreviousComponent = ((HourLFW) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else if (v_Component instanceof RadioLFW) {
                 v_PreviousComponent = ((RadioLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);

@@ -36,7 +36,7 @@ public class ButtonLFW extends Button {
             p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame) {
         RelativeLayout.LayoutParams v_LayoutParamElement = new
                 RelativeLayout.LayoutParams
-                (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
+                (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                 RelativeLayout.TRUE);

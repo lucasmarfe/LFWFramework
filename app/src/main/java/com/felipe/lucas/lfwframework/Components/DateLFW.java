@@ -42,7 +42,7 @@ public class DateLFW extends EditText {
         setId(UtilLFW.getAvailableID());
         setMaxWidth(400);
         setText(new SimpleDateFormat("dd/MM/yyyy").format(p_Date.getTime()));
-        setTextSize(16);
+        setTextSize(18);
         setFocusable(false);
         setClickable(true);
         setActivated(p_IsActive);
@@ -53,7 +53,7 @@ public class DateLFW extends EditText {
         setTextColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setTextColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
-        m_LabelTextView.setTextSize(16);
+        m_LabelTextView.setTextSize(18);
         m_LabelTextView.setId(UtilLFW.getAvailableID());
         setLabelPadding(0, 8, 0, 8);
     }

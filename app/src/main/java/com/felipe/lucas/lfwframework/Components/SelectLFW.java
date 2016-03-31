@@ -25,6 +25,8 @@ public class SelectLFW extends Spinner {
     private int m_PaddingRigth = 0;
     private int m_PaddingBottom = 0;
 
+    ArrayAdapter<String> v_Adapter;
+
     TextView m_LabelTextView;
 
     private String m_Label;
@@ -42,17 +44,19 @@ public class SelectLFW extends Spinner {
         super(p_Context);
         m_LocalContext = p_Context;
         setId(UtilLFW.getAvailableID());
-        setActivated(p_IsActive);
+        setEnabled(p_IsActive);
+        setClickable(p_IsActive);
         m_LabelTextView = new TextView(p_Context);
         //setBackgroundColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setTextColor(ContextCompat.getColor(p_Context, R.color.black));
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
         m_LabelTextView.setId(UtilLFW.getAvailableID());
         m_LabelTextView.setTextSize(12);
+        setLabelPadding(0, 8, 0, 8);
     }
 
     public void setItensContent (List<String> p_StringList) {
-        ArrayAdapter<String> v_Adapter = new ArrayAdapter<String>(m_LocalContext,
+        v_Adapter = new ArrayAdapter<String>(m_LocalContext,
                 R.layout.spinner_lfw_layout, p_StringList);
         v_Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         setAdapter(v_Adapter);
@@ -75,6 +79,7 @@ public class SelectLFW extends Spinner {
                         .WRAP_CONTENT);
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, m_LabelTextView.getId());
+        setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
         this.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(this);
         return m_LabelTextView;

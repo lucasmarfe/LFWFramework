@@ -27,9 +27,9 @@ public class LoginScreen extends BaseLoginScreen {
         v_CheckBox.setItensContent(getApplicationContext(), Arrays.asList("PRD",
                 "HOM"), UtilLFW.checkIfCallerClassIsHeaderChild(this.getClass()));
         m_IFrame.addAfterComponent(v_CheckBox, m_inPassword);
-        //HourLFW v_HourTest = new HourLFW(getApplicationContext(),"Hora início", Calendar
-        // .getInstance(),true,this,true);
-        //m_IFrame.addAfterComponent(v_HourTest , v_CheckBox);
+//        HourLFW v_HourTest = new HourLFW(getApplicationContext(),"Hora início", Calendar
+//         .getInstance(),true,this,true);
+//        m_IFrame.addAfterComponent(v_HourTest , v_CheckBox);
         m_btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {

@@ -18,8 +18,14 @@
         <activity android:name=".Test_Screens.OperationScreens.ProductionOrderFormScreen"></activity>
         <activity android:name=".Screen.BaseConfigurationScreen"></activity>
         <activity android:name=".Test_Screens.OperationScreens.ProductionOrderResultsScreen"></activity>
-        <!--activity android:name=".Test_Screens.LoginScreen"></activity-->
         <activity android:name=".Test_Screens.OperationScreens.ProductionOrderDetailsScreen"></activity>
+        <activity android:name=".Test_Screens.OperationScreens.ProductionExecutionFormScreen"></activity>
+        <activity android:name=".Test_Screens.OperationScreens.ProductionExecutionResultsScreen"></activity>
+        <activity android:name=".Test_Screens.OperationScreens.ProductionExecutionDetailsScreen"></activity>
+
+        <activity android:name=".Test_Screens.QualityScreens.SampleFormScreen"></activity>
+        <activity android:name=".Test_Screens.QualityScreens.SampleResultsScreen"></activity>
+        <activity android:name=".Test_Screens.QualityScreens.SampleDetailsScreen"></activity>
 
         <activity android:name=".Test_Screens.Menu_Screens.MainMenuScreen"></activity>
         <activity android:name=".Test_Screens.Menu_Screens.CadastreMenuScreen"></activity>

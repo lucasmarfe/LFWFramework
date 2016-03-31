@@ -64,7 +64,10 @@ public class ResultsLFW extends ListView {
                 .list_item_result,
                 p_ResultsItemList);
         setAdapter(v_Adapter);
-        setOnItemClickListener(v_ItemClickListener);
+        if (v_ItemClickListener != null) {
+            setOnItemClickListener(v_ItemClickListener);
+        }
+
     }
 
 }
@@ -100,7 +103,7 @@ class ItemResultLFWAdapter extends ArrayAdapter<ItemResultLFW> {
         if (v_ActualView == null) {
             LayoutInflater v_Inflater = (LayoutInflater) getContext().getSystemService(Context
                     .LAYOUT_INFLATER_SERVICE);
-            v_ActualView = v_Inflater.inflate(R.layout.list_item_result, null);
+            v_ActualView = v_Inflater.inflate(R.layout.list_item_result, parent, false);
         }
         ItemResultLFW v_ItemResultActual = objects.get(position);
 

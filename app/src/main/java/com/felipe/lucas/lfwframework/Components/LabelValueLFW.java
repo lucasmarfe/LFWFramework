@@ -30,13 +30,13 @@ public class LabelValueLFW extends TextView {
         String v_Colon = p_ShowColon ? " : " : " ";
         setText(p_Label + v_Colon);
         setId(UtilLFW.getAvailableID());
-        setTextSize(15);
+        setTextSize(17);
         setValuePadding(0, 8, 0, 8);
         setTextColor(ColorStateList.valueOf(ContextCompat.getColor(p_Context, R.color.black)));
         m_Value = new TextView(p_Context);
         m_Value.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(p_Context, R.color
                 .black)));
-        m_Value.setTextSize(15);
+        m_Value.setTextSize(17);
         m_Value.setText(p_Value);
         m_Value.setId(UtilLFW.getAvailableID());
         m_ShowColon = p_ShowColon;

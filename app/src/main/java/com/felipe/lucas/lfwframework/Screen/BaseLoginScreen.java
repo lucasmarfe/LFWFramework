@@ -54,7 +54,7 @@ public class BaseLoginScreen extends BaseScreen {
 //                RelativeLayout.TRUE);
 //        m_Title.setLayoutParams(v_LayoutParamElement);
         m_IFrame.add(m_Title);
-        m_inUserName = new InputLFW(m_Context, "Nome de usuário", true);
+        m_inUserName = new InputLFW(m_Context, "Nome de usuário", true, false, true);
         m_inUserName.setTextSize(20);
         m_inUserName.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         m_inUserName.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color
