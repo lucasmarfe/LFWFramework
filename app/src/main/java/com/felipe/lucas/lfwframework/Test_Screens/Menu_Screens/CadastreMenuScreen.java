@@ -7,9 +7,6 @@ import com.felipe.lucas.lfwframework.Screen.BaseMenuScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.CadastreScreens.MaterialCadastreScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.CadastreScreens.MaterialPropertyCadastreScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.CadastreScreens.ShiftCadastreScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.LoginScreen.LoginScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.OperationScreens.ProductionOrderFormScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.OperationScreens.ProductionOrderResultsScreen;
 
 /**
  * Created by lucas on 09/03/2016.

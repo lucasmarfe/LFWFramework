@@ -5,7 +5,6 @@ import android.view.MenuItem;
 
 import com.felipe.lucas.lfwframework.Components.ButtonLFW;
 import com.felipe.lucas.lfwframework.Components.DateLFW;
-import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Components.SelectLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseDetailsScreen;

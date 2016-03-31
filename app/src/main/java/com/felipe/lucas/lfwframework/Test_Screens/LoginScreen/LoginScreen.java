@@ -4,16 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.felipe.lucas.lfwframework.Components.CheckBoxLFW;
-import com.felipe.lucas.lfwframework.Components.HourLFW;
 import com.felipe.lucas.lfwframework.Components.RadioLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseLoginScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.MenuPrincipalScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.Menu_Screens.MainMenuScreen;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 import java.util.Arrays;
-import java.util.Calendar;
 
 /**
  * Created by lucas on 02/03/2016.

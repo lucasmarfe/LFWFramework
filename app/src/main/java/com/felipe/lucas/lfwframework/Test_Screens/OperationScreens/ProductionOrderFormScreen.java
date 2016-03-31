@@ -1,21 +1,14 @@
 package com.felipe.lucas.lfwframework.Test_Screens.OperationScreens;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
 import com.felipe.lucas.lfwframework.Components.ButtonLFW;
-import com.felipe.lucas.lfwframework.Components.CheckBoxLFW;
 import com.felipe.lucas.lfwframework.Components.DateLFW;
 import com.felipe.lucas.lfwframework.Components.InputLFW;
-import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
-import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
-import com.felipe.lucas.lfwframework.Components.RadioLFW;
 import com.felipe.lucas.lfwframework.Components.SelectLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseFormScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.Menu_Screens.MainMenuScreen;
-import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 import java.util.Arrays;
 import java.util.Calendar;

@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import com.felipe.lucas.lfwframework.Components.ItemMenuLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseMenuScreen;
+import com.felipe.lucas.lfwframework.Test_Screens.QualityScreens.QualityResultsFormScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.QualityScreens.SampleFormScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.QualityScreens.QulityResultsFormScreen;
 
 /**
  * Created by lucas on 09/03/2016.
@@ -25,7 +25,7 @@ public class QualityMenuScreen extends BaseMenuScreen {
     private void buildOptions () {
         m_ItemMenuList.add(new ItemMenuLFW("Amostra de material", SampleFormScreen.class));
         m_ItemMenuList.add(new ItemMenuLFW("Resultados de qualidade",
-                QulityResultsFormScreen.class));
+                QualityResultsFormScreen.class));
         m_Menu.setMenuItens(m_Context, m_ItemMenuList);
     }
 }

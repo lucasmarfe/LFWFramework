@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.felipe.lucas.lfwframework.Components.ItemMenuLFW;
 import com.felipe.lucas.lfwframework.Screen.BaseMenuScreen;
-import com.felipe.lucas.lfwframework.Test_Screens.ReportScreens.InventoryFormScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.OperationScreens.ProductionExecutionFormScreen;
 import com.felipe.lucas.lfwframework.Test_Screens.OperationScreens.ProductionOrderFormScreen;
 

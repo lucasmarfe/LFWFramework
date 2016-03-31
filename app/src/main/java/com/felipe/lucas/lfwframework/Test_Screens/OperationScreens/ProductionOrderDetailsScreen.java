@@ -1,13 +1,10 @@
 package com.felipe.lucas.lfwframework.Test_Screens.OperationScreens;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.felipe.lucas.lfwframework.Components.ButtonLFW;
 import com.felipe.lucas.lfwframework.Components.DateLFW;
-import com.felipe.lucas.lfwframework.Components.InputLFW;
 import com.felipe.lucas.lfwframework.Components.ItemResultLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Components.SelectLFW;
