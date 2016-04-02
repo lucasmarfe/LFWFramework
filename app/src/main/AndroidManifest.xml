@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".Test_Screens.OperationScreens.ProductionOrderFormScreen"></activity>
         <activity android:name=".Screen.BaseConfigurationScreen"></activity>
+        <activity android:name=".Screen.BaseAboutScreen"></activity>
         <activity android:name=".Test_Screens.OperationScreens.ProductionOrderResultsScreen"></activity>
         <activity android:name=".Test_Screens.OperationScreens.ProductionOrderDetailsScreen"></activity>
         <activity android:name=".Test_Screens.OperationScreens.ProductionExecutionFormScreen"></activity>
@@ -32,6 +33,7 @@
         <activity android:name=".Test_Screens.Menu_Screens.OperationMenuScreen"></activity>
         <activity android:name=".Test_Screens.Menu_Screens.QualityMenuScreen"></activity>
         <activity android:name=".Test_Screens.Menu_Screens.ReportMenuScreen"></activity>
+
     </application>
 
 </manifest>
