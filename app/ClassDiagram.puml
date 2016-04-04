@@ -1,0 +1,94 @@
+@startuml
+skinparam classAttributeIconSize 0
+class ButtonLFW {
+-ButtonLFW(Context context)
++ButtonLFW(Context p_Context, String p_Text, boolean p_IsActive)
++View getLayoutParams (int p_PreviousComponentId, boolean
+            p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
+}
+
+class CheckBoxLFW{
+-CheckBoxLFW (Context p_Context)
++CheckBoxLFW (Context p_Context, String p_LabelText, String p_Text, boolean p_Checked, boolean p_ShowColon, boolean p_IsActive)
++View getLayoutParams (int p_PreviousComponentId, boolean
+             p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
+
+-int m_PaddingLeft
+-int m_PaddingTopp = 0;
+-int m_PaddingRigth = 0;
+-int m_PaddingBottom = 0;
+'-TextView m_LabelTextView;  Lembrar relacionamento
+}
+
+class DateLFW{
+-DateLFW (Context context)
++DateLFW (Context p_Context, String p_LabelText, Calendar p_Date, Boolean p_ShowColon,AppCompatActivity p_Activity, boolean p_IsActive)
++View getLayoutParams (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
+
+- int m_PaddingLeft
+-int m_PaddingTopp
+-int m_PaddingRigth
+-int m_PaddingBottom
+'-TextView m_LabelTextView; Lembrar relacionamento
+}
+
+interface View.OnClickListener
+interface DatePickerDialog.OnDateSetListener
+
+class DatePickerLFW{
++ DatePickerLFW (Context context, EditText editTextViewID)
++ void onDateSet (android.widget.DatePicker view, int year, int monthOfYear, int
+              dayOfMonth)
++ void onClick (View v)
+- void updateDisplay ()
+
+- int m_Day;
+- int m_Month;
+- int m_Year;
+'- Context m_Context
+'- EditText m_EditText;
+}
+
+
+class HourLFW{
+- HourLFW (Context context)
++ HourLFW (Context p_Context, String p_LabelText, Calendar p_Date, Boolean p_ShowColon, AppCompatActivity p_Activity, boolean p_IsActive)
++ View getLayoutParams (int p_PreviousComponentId, boolean              p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++ void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
+             p_PaddingBottom)
+
+- int m_PaddingLeft
+- int m_PaddingTopp
+- int m_PaddingRigth
+- int m_PaddingBottom
+'TextView m_LabelTextView; Lembrar relacionamento
+}
+
+
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+@enduml

@@ -21,9 +21,9 @@ import android.widget.TextView;
 /**
  * Created by lucas on 17/02/2016.
  */
-public class CustomToolbar extends Toolbar {
+public class CustomToolbar {//extends Toolbar {
 
-    public CustomToolbar (Context context, AttributeSet attrs, int defStyleAttr) {
+    /*public CustomToolbar (Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         // TODO Auto-generated constructor stub
     }
@@ -53,7 +53,7 @@ public class CustomToolbar extends Toolbar {
         itemColor = color;
         colorizeToolbar(this, itemColor);
     }
-
+*/
 
     /**
      * Use this method to colorize toolbar icons to the desired target color
@@ -61,7 +61,7 @@ public class CustomToolbar extends Toolbar {
      * @param toolbarView       toolbar view being colored
      * @param toolbarIconsColor the target color of toolbar icons
      */
-    public static void colorizeToolbar (Toolbar toolbarView, int toolbarIconsColor) {
+    /*public static void colorizeToolbar (Toolbar toolbarView, int toolbarIconsColor) {
         final PorterDuffColorFilter colorFilter
                 = new PorterDuffColorFilter(toolbarIconsColor, PorterDuff.Mode.SRC_IN);
 
@@ -139,7 +139,7 @@ public class CustomToolbar extends Toolbar {
                 }
             }
         }
-    }
+    }*/
 
 
 }

@@ -21,24 +21,21 @@ public class DateLFW extends EditText {
 
     private int m_PaddingLeft = 0;
 
-    private int m_PaddingTopp = 0;
+    private int m_PaddingTop = 0;
 
     private int m_PaddingRigth = 0;
 
     private int m_PaddingBottom = 0;
 
-    private String m_LabelText;
+    private TextView m_LabelTextView;
 
-    TextView m_LabelTextView;
-
-    public DateLFW (Context context) {
+    DateLFW (Context context) {
         super(context);
     }
 
     public DateLFW (Context p_Context, String p_LabelText, Calendar p_Date, Boolean p_ShowColon,
                     AppCompatActivity p_Activity, boolean p_IsActive) {
         super(p_Context);
-        m_LabelText = p_LabelText;
         setId(UtilLFW.getAvailableID());
         setMaxWidth(400);
         setText(new SimpleDateFormat("dd/MM/yyyy").format(p_Date.getTime()));
@@ -67,7 +64,7 @@ public class DateLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         m_LabelTextView.setLayoutParams(v_LayoutParamElement);
-        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRigth, m_PaddingBottom);
         p_IFrame.addView(m_LabelTextView);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
                 RelativeLayout.LayoutParams
@@ -75,7 +72,7 @@ public class DateLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, m_LabelTextView.getId());
-        setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRigth, m_PaddingBottom);
         this.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(this);
         return m_LabelTextView;
@@ -84,7 +81,7 @@ public class DateLFW extends EditText {
     public void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
             p_PaddingBottom) {
         m_PaddingLeft = p_PaddingLeft;
-        m_PaddingTopp = p_PaddingTop;
+        m_PaddingTop = p_PaddingTop;
         m_PaddingRigth = p_PaddingRigth;
         m_PaddingBottom = p_PaddingBottom;
     }

@@ -20,14 +20,14 @@ public class CheckBoxLFW extends CheckBox {
     private int m_PaddingRigth = 0;
     private int m_PaddingBottom = 0;
 
-    TextView m_LabelTextView;
+    private TextView m_LabelTextView;
 
-    public CheckBoxLFW (Context p_Context) {
+    CheckBoxLFW (Context p_Context) {
         super(p_Context);
     }
 
     public CheckBoxLFW (Context p_Context, String p_LabelText, String p_Text, boolean p_Checked,
-                        Boolean p_ShowColon, boolean p_IsActive) {
+                        boolean p_ShowColon, boolean p_IsActive) {
         super(p_Context);
         setText(p_Text);
         setChecked(p_Checked);

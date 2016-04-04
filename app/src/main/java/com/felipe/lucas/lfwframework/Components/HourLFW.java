@@ -27,18 +27,15 @@ public class HourLFW extends EditText {
 
     private int m_PaddingBottom = 0;
 
-    private String m_LabelText;
-
     TextView m_LabelTextView;
 
-    public HourLFW (Context context) {
+    HourLFW (Context context) {
         super(context);
     }
 
     public HourLFW (Context p_Context, String p_LabelText, Calendar p_Date, Boolean p_ShowColon,
                     AppCompatActivity p_Activity, boolean p_IsActive) {
         super(p_Context);
-        m_LabelText = p_LabelText;
         setId(UtilLFW.getAvailableID());
         setWidth(200);
         setHeight(50);

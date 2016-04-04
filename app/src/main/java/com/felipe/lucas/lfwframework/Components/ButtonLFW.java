@@ -14,7 +14,7 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
  */
 public class ButtonLFW extends Button {
 
-    public ButtonLFW(Context context)
+    ButtonLFW (Context context)
     {
         super(context);
     }
