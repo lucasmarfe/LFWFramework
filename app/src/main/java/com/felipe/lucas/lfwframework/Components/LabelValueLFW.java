@@ -15,11 +15,10 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
  */
 public class LabelValueLFW extends TextView {
     private int m_PaddingLeft;
-    private int m_PaddingTopp;
-    private int m_PaddingRigth;
+    private int m_PaddingTop;
+    private int m_PaddingRight;
     private int m_PaddingBottom;
     TextView m_Value;
-    Boolean m_ShowColon;
 
     public LabelValueLFW (Context context) {
         super(context);
@@ -39,8 +38,6 @@ public class LabelValueLFW extends TextView {
         m_Value.setTextSize(17);
         m_Value.setText(p_Value);
         m_Value.setId(UtilLFW.getAvailableID());
-        m_ShowColon = p_ShowColon;
-
     }
 
     public View getLayoutParams (int p_PreviousComponentId, IFrameLFW p_IFrame) {
@@ -49,7 +46,7 @@ public class LabelValueLFW extends TextView {
                 (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
-        setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRight, m_PaddingBottom);
         setLayoutParams(v_LayoutParamElement);
         p_IFrame.addView(this);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
@@ -59,7 +56,7 @@ public class LabelValueLFW extends TextView {
         //v_LayoutParamElement2.addRule(RelativeLayout.BELOW, this.getId());
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, getId());
-        m_Value.setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        m_Value.setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRight, m_PaddingBottom);
         m_Value.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(m_Value);
         return this;
@@ -68,8 +65,8 @@ public class LabelValueLFW extends TextView {
     public void setValuePadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
             p_PaddingBottom) {
         m_PaddingLeft = p_PaddingLeft;
-        m_PaddingTopp = p_PaddingTop;
-        m_PaddingRigth = p_PaddingRigth;
+        m_PaddingTop = p_PaddingTop;
+        m_PaddingRight = p_PaddingRigth;
         m_PaddingBottom = p_PaddingBottom;
     }
 }

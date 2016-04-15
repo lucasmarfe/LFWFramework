@@ -50,12 +50,11 @@ class OnItemClickListenerMenuLFW implements AdapterView.OnItemClickListener {
     public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
         Context v_Context = view.getContext();
         ItemMenuLFW o = (ItemMenuLFW) parent.getItemAtPosition(position);
-        Intent v_Intent = new Intent(v_Context, o.m_ItemMenuClass);
+        Intent v_Intent = new Intent(v_Context, o.getItemMenuClass());
         v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         v_Context.startActivity(v_Intent);
     }
 
-    //public abstract void onClickLFW (AdapterView<?> parent, View view, int position, long id);
 }
 
 class ItemMenuLFWAdapter extends ArrayAdapter<ItemMenuLFW> {

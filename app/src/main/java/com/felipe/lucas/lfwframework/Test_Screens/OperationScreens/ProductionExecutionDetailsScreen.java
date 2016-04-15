@@ -60,7 +60,8 @@ public class ProductionExecutionDetailsScreen extends BaseDetailsScreen {
         LabelValueLFW v_InCode = new LabelValueLFW(getApplicationContext(),"Ordem de Produção","1072360",true);
         LabelValueLFW v_InCodeOperation = new LabelValueLFW(getApplicationContext(),"Operação","0010",true);
         SelectLFW v_SelStatus = new SelectLFW(getApplicationContext(),"Status",true,false);
-        v_SelStatus.setItensContent(Arrays.asList("Programada", "Iniciada", "Confirmada", "Finalizada"));
+        v_SelStatus.setItensContent(getApplicationContext(), Arrays.asList("Programada",
+                "Iniciada", "Confirmada", "Finalizada"));
         v_SelStatus.setSelection(3);
         DateLFW v_InitialDate = new DateLFW(getApplicationContext(),"Data início planejada", Calendar
                 .getInstance(),true,this,false);

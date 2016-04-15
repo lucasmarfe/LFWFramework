@@ -39,7 +39,7 @@ public class ProductionExecutionFormScreen extends BaseFormScreen {
         InputLFW v_InMaterial = new InputLFW(getApplicationContext(), "Material", false, true, true);
         InputLFW v_InEquipment = new InputLFW(getApplicationContext(), "Equipamento", false, true, true);
         SelectLFW v_SelStatus = new SelectLFW(getApplicationContext(), "Status", true, true);
-        v_SelStatus.setItensContent(Arrays.asList("Programada", "Iniciada",
+        v_SelStatus.setItensContent(getApplicationContext(), Arrays.asList("Programada", "Iniciada",
                 "Confirmada", "Finalizada"));
         ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Filtrar", true);
         v_FilterButton.setOnClickListener(new View.OnClickListener() {

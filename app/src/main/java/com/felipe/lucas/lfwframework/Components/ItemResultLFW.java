@@ -4,11 +4,11 @@ package com.felipe.lucas.lfwframework.Components;
  * Created by lucas on 11/02/2016.
  */
 public class ItemResultLFW {
-    public String m_ItemMenuIdentify;
-    public String m_ItemMenuInfo1;
-    public String m_ItemMenuInfo2;
-    public Integer m_ItemStatusColor;
-    public Class m_ItemMenuClass;
+    private String m_ItemMenuIdentify;
+    private String m_ItemMenuInfo1;
+    private String m_ItemMenuInfo2;
+    private Integer m_ItemStatusColor;
+    private Class m_ItemMenuClass;
 
     public ItemResultLFW (String p_ItemMenuIdentify, String p_ItemMenuInfo1, String
             p_ItemMenuInfo2, Integer p_ItemStatusColor, Class p_ItemMenuClass) {

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.text.InputType;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,13 +17,15 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
 public class InputLFW extends EditText {
     private int m_PaddingLeft = 0;
 
-    private int m_PaddingTopp = 0;
+    private int m_PaddingTop = 0;
 
-    private int m_PaddingRigth = 0;
+    private int m_PaddingRight = 0;
 
     private int m_PaddingBottom = 0;
 
-    TextView m_LabelTextView;
+    private TextView m_LabelTextView;
+
+    private Context m_Context;
 
     public InputLFW(Context context)
     {
@@ -34,6 +35,7 @@ public class InputLFW extends EditText {
     public InputLFW (Context p_Context, String p_Text, boolean p_ShowHint, boolean p_ShowColon,
                      boolean p_IsActive) {
         super(p_Context);
+        m_Context = p_Context;
         setId(UtilLFW.getAvailableID());
         if (p_ShowHint) {
             setHint(p_Text);
@@ -52,8 +54,8 @@ public class InputLFW extends EditText {
 
     public View getLayoutParamsWhitoutHeader (int p_PreviousComponentId, boolean
             p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame) {
-        setTextColor(getResources().getColor(R.color.white));
-        setHintTextColor(getResources().getColor(R.color.white));
+        setTextColor(ContextCompat.getColor(m_Context, R.color.white));
+        setHintTextColor(ContextCompat.getColor(m_Context, R.color.white));
         RelativeLayout.LayoutParams v_LayoutParamElement = new
                 RelativeLayout.LayoutParams
                 (RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams
@@ -83,7 +85,7 @@ public class InputLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         m_LabelTextView.setLayoutParams(v_LayoutParamElement);
-        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRight, m_PaddingBottom);
         p_IFrame.addView(m_LabelTextView);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
                 RelativeLayout.LayoutParams
@@ -91,7 +93,7 @@ public class InputLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, m_LabelTextView.getId());
-        setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRight, m_PaddingBottom);
         this.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(this);
         return m_LabelTextView;
@@ -100,8 +102,8 @@ public class InputLFW extends EditText {
     public void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
             p_PaddingBottom) {
         m_PaddingLeft = p_PaddingLeft;
-        m_PaddingTopp = p_PaddingTop;
-        m_PaddingRigth = p_PaddingRigth;
+        m_PaddingTop = p_PaddingTop;
+        m_PaddingRight = p_PaddingRigth;
         m_PaddingBottom = p_PaddingBottom;
     }
 }

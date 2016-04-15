@@ -34,19 +34,18 @@ public class BaseLoginScreen extends BaseScreen {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        m_Context = getApplicationContext();
-
-        m_IFrame = new IFrameLFW(m_Context);
+        m_IFrame = new IFrameLFW(getApplicationContext());
         setBackgroundColor(R.color.login_background);
         //m_IFrame.setGravity(Gravity.CENTER);
         m_IFrame.clear();
-        m_IFrame.setBackgroundColor(ContextCompat.getColor(m_Context, R.color.login_background));
+        m_IFrame.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color
+                .login_background));
         m_Title = new TextView(getApplicationContext());
         m_Title.setId(UtilLFW.getAvailableID());
         m_Title.setPadding(0, 200, 0, 150);
         m_Title.setTextSize(40);
         m_Title.setTypeface(Typeface.DEFAULT_BOLD);
-        m_Title.setTextColor(ContextCompat.getColor(m_Context, R.color.white));
+        m_Title.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
 //        RelativeLayout.LayoutParams v_LayoutParamElement = new RelativeLayout.LayoutParams
 //                (RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams
 //                        .WRAP_CONTENT);
@@ -54,16 +53,16 @@ public class BaseLoginScreen extends BaseScreen {
 //                RelativeLayout.TRUE);
 //        m_Title.setLayoutParams(v_LayoutParamElement);
         m_IFrame.add(m_Title);
-        m_inUserName = new InputLFW(m_Context, "Nome de usuário", true, false, true);
+        m_inUserName = new InputLFW(getApplicationContext(), "Nome de usuário", true, false, true);
         m_inUserName.setTextSize(20);
         m_inUserName.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         m_inUserName.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color
                 .inputGrayBright));
-        m_inPassword = new InputPasswordLFW(m_Context, "Senha", true);
+        m_inPassword = new InputPasswordLFW(getApplicationContext(), "Senha", true);
         m_inPassword.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         m_inPassword.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color.inputGrayBright));
         m_inPassword.setTextSize(20);
-        m_btnLogin = new ButtonLFW(m_Context, "Login", true);
+        m_btnLogin = new ButtonLFW(getApplicationContext(), "Login", true);
         m_IFrame.add(m_inUserName);
         m_IFrame.add(m_inPassword);
         m_IFrame.add(m_btnLogin);

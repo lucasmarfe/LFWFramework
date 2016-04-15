@@ -18,14 +18,13 @@ import java.util.ArrayList;
  */
 public class IFrameLFW extends RelativeLayout {
     private ArrayList<View> m_OrderedObjectsList = new ArrayList<View>();
-    FrameLayout.LayoutParams m_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
-            .LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
     public IFrameLFW (Context context) {
         super(context);
         //setGravity(Gravity.CENTER);
         //m_LayoutParams.gravity = Gravity.CENTER_VERTICAL;
-        setLayoutParams(m_LayoutParams);
+        FrameLayout.LayoutParams v_LayoutParams = new FrameLayout.LayoutParams(RelativeLayout
+                .LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        setLayoutParams(v_LayoutParams);
     }
 
     public void add (View p_Component) {

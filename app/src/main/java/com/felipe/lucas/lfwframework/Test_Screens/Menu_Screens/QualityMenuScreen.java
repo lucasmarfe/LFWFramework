@@ -26,6 +26,6 @@ public class QualityMenuScreen extends BaseMenuScreen {
         m_ItemMenuList.add(new ItemMenuLFW("Amostra de material", SampleFormScreen.class));
         m_ItemMenuList.add(new ItemMenuLFW("Resultados de qualidade",
                 QualityResultsFormScreen.class));
-        m_Menu.setMenuItens(m_Context, m_ItemMenuList);
+        m_Menu.setMenuItens(getApplicationContext(), m_ItemMenuList);
     }
 }

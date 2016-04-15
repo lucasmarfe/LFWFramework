@@ -73,7 +73,7 @@ public class SampleDetailsScreen extends BaseDetailsScreen {
         LabelValueLFW v_InOperation = new LabelValueLFW(getApplicationContext(), "Operação",
                 "0010", true);
         SelectLFW v_SelStatus = new SelectLFW(getApplicationContext(), "Status", true, false);
-        v_SelStatus.setItensContent(Arrays.asList("Retirada", "Analisada",
+        v_SelStatus.setItensContent(getApplicationContext(), Arrays.asList("Retirada", "Analisada",
                 "Programada"));
         v_SelStatus.setSelection(1);
 

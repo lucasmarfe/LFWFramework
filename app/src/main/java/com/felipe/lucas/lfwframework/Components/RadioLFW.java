@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Components;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.RadioButton;
@@ -19,17 +20,15 @@ import java.util.List;
  */
 public class RadioLFW extends RadioGroup {
     private int m_PaddingLeft;
-    private int m_PaddingTopp;
-    private int m_PaddingRigth;
+    private int m_PaddingTop;
+    private int m_PaddingRight;
     private int m_PaddingBottom;
 
     private RadioButton[] m_RadioButtonList;
 
     private TextView m_LabelTextView;
 
-    private Context m_LocalContext;
-
-    //private List<RadioButton> m_RadioButtonList = new ArrayList<RadioButton>();
+    private Context m_Context;
 
     public RadioLFW (Context context) {
         super(context);
@@ -38,33 +37,15 @@ public class RadioLFW extends RadioGroup {
     public RadioLFW (Context p_Context, String p_LabelText, boolean p_IsHorizontal, boolean
             p_IsActive, boolean p_ShowColon) {
         super(p_Context);
-        m_LocalContext = p_Context;
+        m_Context = p_Context;
         setId(UtilLFW.getAvailableID());
         setOrientation(p_IsHorizontal ? RadioGroup.HORIZONTAL : RadioGroup.VERTICAL);
         setActivated(p_IsActive);
         m_LabelTextView = new TextView(p_Context);
-        m_LabelTextView.setTextColor(ContextCompat.getColor(p_Context, R.color.black));
+        m_LabelTextView.setTextColor(ContextCompat.getColor(m_Context, R.color.black));
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
         m_LabelTextView.setId(UtilLFW.getAvailableID());
         setLabelPadding(0, 20, 0, 20);
-        //setBackgroundColor();
-
-//        setOnCheckedChangeListener(new OnCheckedChangeListener() {
-//            int v_Checked = -1;
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if(checkedId!=-1)
-//                {
-//                    v_Checked = checkedId;
-//                    clearCheck();
-//                }
-//
-//                RadioButton v_RadioChecked = (RadioButton) findViewById(v_Checked);
-//                if(v_RadioChecked!=null)v_RadioChecked.setChecked(true);
-//            }
-//
-//        });
-        //);
     }
 
     public void setItensContent (Context p_Context, Enum<?> p_Enum, boolean
@@ -78,13 +59,13 @@ public class RadioLFW extends RadioGroup {
             m_RadioButtonList[c_Count].setText((String) p_Value);
             m_RadioButtonList[c_Count].setId(v_RadioId + c_Count);
             m_RadioButtonList[c_Count].setTextColor(p_IsFromBaseScreenWithHeader ? ContextCompat
-                    .getColor(m_LocalContext, R.color.black) : ContextCompat.getColor
-                    (m_LocalContext, R.color.white));
+                    .getColor(p_Context, R.color.black) : ContextCompat.getColor
+                    (p_Context, R.color.white));
             m_RadioButtonList[c_Count].setButtonTintList(p_IsFromBaseScreenWithHeader ?
                     ColorStateList.valueOf(ContextCompat
-                            .getColor(m_LocalContext, R.color.black)) : ColorStateList.valueOf
+                            .getColor(p_Context, R.color.black)) : ColorStateList.valueOf
                     (ContextCompat
-                            .getColor(m_LocalContext, R.color.white)));
+                            .getColor(p_Context, R.color.white)));
             //m_RadioButtonList.add(m_RadioButton);
             addView(m_RadioButtonList[c_Count]);
         }
@@ -99,12 +80,13 @@ public class RadioLFW extends RadioGroup {
             m_RadioButtonList[c_Count].setText(p_Value);
             m_RadioButtonList[c_Count].setId(v_RadioId + c_Count);
             m_RadioButtonList[c_Count].setTextColor(p_IsFromBaseScreenWithHeader ? ContextCompat
-                    .getColor(m_LocalContext, R.color.black) : ContextCompat.getColor
-                    (m_LocalContext, R.color.white));
+                    .getColor(p_Context, R.color.black) : ContextCompat.getColor
+                    (p_Context, R.color.white));
             m_RadioButtonList[c_Count].setButtonTintList(p_IsFromBaseScreenWithHeader ?
                     ColorStateList.valueOf(ContextCompat
-                    .getColor(m_LocalContext, R.color.black)) : ColorStateList.valueOf(ContextCompat
-                    .getColor(m_LocalContext, R.color.white)));
+                            .getColor(p_Context, R.color.black)) : ColorStateList.valueOf
+                    (ContextCompat
+                    .getColor(p_Context, R.color.white)));
             //m_RadioButtonList.add(m_RadioButtonList[c_Count]);
             addView(m_RadioButtonList[c_Count]);
             c_Count++;
@@ -119,12 +101,12 @@ public class RadioLFW extends RadioGroup {
                         .WRAP_CONTENT);
 
         if (!p_IsBaseScreenWithHeaderChild) {
-            m_LabelTextView.setTextColor(ContextCompat.getColor(m_LocalContext, R.color.white));
+            m_LabelTextView.setTextColor(ContextCompat.getColor(m_Context, R.color.white));
         }
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         m_LabelTextView.setTextSize(18);
         m_LabelTextView.setLayoutParams(v_LayoutParamElement);
-        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTopp, m_PaddingRigth, m_PaddingBottom);
+        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRight, m_PaddingBottom);
         p_IFrame.addView(m_LabelTextView);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
                 RelativeLayout.LayoutParams
@@ -140,8 +122,8 @@ public class RadioLFW extends RadioGroup {
     public void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
             p_PaddingBottom) {
         m_PaddingLeft = p_PaddingLeft;
-        m_PaddingTopp = p_PaddingTop;
-        m_PaddingRigth = p_PaddingRigth;
+        m_PaddingTop = p_PaddingTop;
+        m_PaddingRight = p_PaddingRigth;
         m_PaddingBottom = p_PaddingBottom;
     }
 

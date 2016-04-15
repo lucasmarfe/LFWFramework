@@ -43,7 +43,7 @@ public class SampleFormScreen extends BaseFormScreen {
         InputLFW v_InOperation = new InputLFW(getApplicationContext(), "Operação", false, true,
                 true);
         SelectLFW v_SelStatus = new SelectLFW(getApplicationContext(), "Status", true, true);
-        v_SelStatus.setItensContent(Arrays.asList("Retirada", "Analisada",
+        v_SelStatus.setItensContent(getApplicationContext(), Arrays.asList("Retirada", "Analisada",
                 "Programada"));
         ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Filtrar", true);
         v_FilterButton.setOnClickListener(new View.OnClickListener() {

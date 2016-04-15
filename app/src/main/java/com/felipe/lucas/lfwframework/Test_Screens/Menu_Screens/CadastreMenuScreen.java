@@ -29,6 +29,6 @@ public class CadastreMenuScreen extends BaseMenuScreen {
                 MaterialPropertyCadastreScreen.class));
         m_ItemMenuList.add(new ItemMenuLFW("Turno",
                 ShiftCadastreScreen.class));
-        m_Menu.setMenuItens(m_Context, m_ItemMenuList);
+        m_Menu.setMenuItens(getApplicationContext(), m_ItemMenuList);
     }
 }

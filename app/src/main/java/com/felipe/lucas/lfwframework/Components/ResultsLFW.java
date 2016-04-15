@@ -135,7 +135,7 @@ class ItemResultLFWAdapter extends ArrayAdapter<ItemResultLFW> {
         return v_ActualView;
     }
 
-    public Bitmap getCircle (int p_Color) {
+    private Bitmap getCircle (int p_Color) {
 //        Bitmap bitmap = Bitmap.createBitmap(
 //                5, // Width
 //                5, // Height

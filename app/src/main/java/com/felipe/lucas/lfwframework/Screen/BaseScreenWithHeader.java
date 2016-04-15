@@ -16,24 +16,9 @@ import com.felipe.lucas.lfwframework.R;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
 public class BaseScreenWithHeader extends AppCompatActivity {
-    public Context m_Context;
     public IFrameLFW m_IFrame;
-    public String m_Title = null;
+    public String m_Title = "";
 
-    //    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-////        setContentView(R.layout.base_screen_with_header);
-////        RelativeLayout v_relative = (RelativeLayout) findViewById(R.id
-////                .base_screen_with_header_layout_ID);
-////        m_IFrame = new IFrameLFW(getApplicationContext());
-////        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-////        v_relative.removeView(toolbar);
-//        //setContentView(R.layout.base_screen_with_header_2);
-//        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        //m_IFrame = new IFrameLFW(m_Context);
-//    }
     @Override
     protected void onCreate (Bundle savedInstanceState) {//, Context p_Context) {
         super.onCreate(savedInstanceState);

@@ -44,7 +44,7 @@ public class DateLFW extends EditText {
         setClickable(true);
         setActivated(p_IsActive);
         if (p_IsActive) {
-            DatePickerLFW m_Date = new DatePickerLFW(p_Activity, this);
+            new DatePickerLFW(p_Activity, this);
         }
         m_LabelTextView = new TextView(p_Context);
         setTextColor(ContextCompat.getColor(p_Context, R.color.black));

@@ -26,6 +26,6 @@ public class OperationMenuScreen extends BaseMenuScreen {
         m_ItemMenuList.add(new ItemMenuLFW("Ordem de produção", ProductionOrderFormScreen.class));
         m_ItemMenuList.add(new ItemMenuLFW("Execução de produção",
                 ProductionExecutionFormScreen.class));
-        m_Menu.setMenuItens(m_Context, m_ItemMenuList);
+        m_Menu.setMenuItens(getApplicationContext(), m_ItemMenuList);
     }
 }

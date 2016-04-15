@@ -37,9 +37,11 @@ public class ProductionOrderFormScreen extends BaseFormScreen {
         InputLFW v_InMaterial = new InputLFW(getApplicationContext(),"Material",false,true,true);
         InputLFW v_InEquipment = new InputLFW(getApplicationContext(),"Centro de trabalho",false,true,true);
         SelectLFW v_SelShift = new SelectLFW(getApplicationContext(),"Turno",true,true);
-        v_SelShift.setItensContent(Arrays.asList("Turno A1", "Turno A2", "Turno B1", "Turno B2"));
+        v_SelShift.setItensContent(getApplicationContext(), Arrays.asList("Turno A1", "Turno A2",
+                "Turno B1", "Turno B2"));
         SelectLFW v_SelStatus = new SelectLFW(getApplicationContext(),"Status",true,true);
-        v_SelStatus.setItensContent(Arrays.asList("Programada", "Iniciada", "Confirmada", "Finalizada"));
+        v_SelStatus.setItensContent(getApplicationContext(), Arrays.asList("Programada",
+                "Iniciada", "Confirmada", "Finalizada"));
         ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Filtrar", true);
         ButtonLFW v_ImportButton= new ButtonLFW(getApplicationContext(), " Importar ", true);
         v_FilterButton.setOnClickListener(new View.OnClickListener() {

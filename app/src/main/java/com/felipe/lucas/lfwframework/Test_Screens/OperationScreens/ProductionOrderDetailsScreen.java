@@ -66,10 +66,12 @@ public class ProductionOrderDetailsScreen extends BaseDetailsScreen {
         LabelValueLFW v_InMaterial = new LabelValueLFW(getApplicationContext(),"Material","7036-TAR LC 155,0cm",true);
         LabelValueLFW v_InEquipment = new LabelValueLFW(getApplicationContext(),"Centro de trabalho","2901 - Forno Forjaria",true);
         SelectLFW v_SelShift = new SelectLFW(getApplicationContext(),"Turno",true,false);
-        v_SelShift.setItensContent(Arrays.asList("Turno A1", "Turno A2", "Turno B1", "Turno B2"));
+        v_SelShift.setItensContent(getApplicationContext(), Arrays.asList("Turno A1", "Turno A2",
+                "Turno B1", "Turno B2"));
         v_SelShift.setSelection(1);
         SelectLFW v_SelStatus = new SelectLFW(getApplicationContext(),"Status",true,false);
-        v_SelStatus.setItensContent(Arrays.asList("Programada", "Iniciada", "Confirmada", "Finalizada"));
+        v_SelStatus.setItensContent(getApplicationContext(), Arrays.asList("Programada",
+                "Iniciada", "Confirmada", "Finalizada"));
         v_SelShift.setSelection(3);
 
         ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Inicar Ordem", true);

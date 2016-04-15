@@ -25,15 +25,7 @@ public class SelectLFW extends Spinner {
     private int m_PaddingRigth = 0;
     private int m_PaddingBottom = 0;
 
-    ArrayAdapter<String> v_Adapter;
-
     TextView m_LabelTextView;
-
-    private String m_Label;
-
-    private Context m_LocalContext;
-
-    private List<RadioButton> m_RadioButtonList = new ArrayList<RadioButton>();
 
     public SelectLFW (Context p_Context) {
         super(p_Context);
@@ -42,7 +34,6 @@ public class SelectLFW extends Spinner {
     public SelectLFW (Context p_Context, String p_LabelText, boolean p_ShowColon, boolean
             p_IsActive) {
         super(p_Context);
-        m_LocalContext = p_Context;
         setId(UtilLFW.getAvailableID());
         setEnabled(p_IsActive);
         setClickable(p_IsActive);
@@ -55,8 +46,8 @@ public class SelectLFW extends Spinner {
         setLabelPadding(0, 8, 0, 8);
     }
 
-    public void setItensContent (List<String> p_StringList) {
-        v_Adapter = new ArrayAdapter<String>(m_LocalContext,
+    public void setItensContent (Context p_Context, List<String> p_StringList) {
+        ArrayAdapter<String> v_Adapter = new ArrayAdapter<String>(p_Context,
                 R.layout.spinner_lfw_layout, p_StringList);
         v_Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         setAdapter(v_Adapter);

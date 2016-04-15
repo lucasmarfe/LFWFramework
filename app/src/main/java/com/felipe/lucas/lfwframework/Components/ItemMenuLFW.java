@@ -4,8 +4,8 @@ package com.felipe.lucas.lfwframework.Components;
  * Created by lucas on 11/02/2016.
  */
 public class ItemMenuLFW {
-    public String m_ItemMenuName;
-    public Class m_ItemMenuClass;
+    private String m_ItemMenuName;
+    private Class m_ItemMenuClass;
 
     public ItemMenuLFW (String m_ItemMenuName, Class m_ItemMenuClass) {
         this.m_ItemMenuName = m_ItemMenuName;

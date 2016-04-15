@@ -3,11 +3,18 @@ skinparam classAttributeIconSize 0
 class ButtonLFW {
 -ButtonLFW(Context context)
 +ButtonLFW(Context p_Context, String p_Text, boolean p_IsActive)
-+View getLayoutParams (int p_PreviousComponentId, boolean
-            p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++View getLayoutParams (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
 }
-
-class CheckBoxLFW{
+package "View"{
+class View.TextView
+class Button
+class CheckBox
+class EditText
+}
+Button<|--ButtonLFW
+CheckBox<|--CheckBoxLFW
+View.TextView o-- CheckBoxLFW
+class CheckBoxLFW {
 -CheckBoxLFW (Context p_Context)
 +CheckBoxLFW (Context p_Context, String p_LabelText, String p_Text, boolean p_Checked, boolean p_ShowColon, boolean p_IsActive)
 +View getLayoutParams (int p_PreviousComponentId, boolean
@@ -15,10 +22,9 @@ class CheckBoxLFW{
 +void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
 
 -int m_PaddingLeft
--int m_PaddingTopp = 0;
--int m_PaddingRigth = 0;
--int m_PaddingBottom = 0;
-'-TextView m_LabelTextView;  Lembrar relacionamento
+-int m_PaddingTop
+-int m_PaddingRight
+-int m_PaddingBottom
 }
 
 class DateLFW{
@@ -31,11 +37,13 @@ class DateLFW{
 -int m_PaddingTopp
 -int m_PaddingRigth
 -int m_PaddingBottom
-'-TextView m_LabelTextView; Lembrar relacionamento
 }
+EditText <|-- DateLFW
+View.TextView o-- DateLFW
+DatePickerLFW *-- DateLFW
 
-interface View.OnClickListener
-interface DatePickerDialog.OnDateSetListener
+'interface View.OnClickListener
+'interface DatePickerDialog.OnDateSetListener
 
 class DatePickerLFW{
 + DatePickerLFW (Context context, EditText editTextViewID)
@@ -47,11 +55,11 @@ class DatePickerLFW{
 - int m_Day;
 - int m_Month;
 - int m_Year;
-'- Context m_Context
-'- EditText m_EditText;
 }
 
-
+EditText <|-- HourLFW
+View.TextView o-- HourLFW
+TimePickerLFW *-- HourLFW
 class HourLFW{
 - HourLFW (Context context)
 + HourLFW (Context p_Context, String p_LabelText, Calendar p_Date, Boolean p_ShowColon, AppCompatActivity p_Activity, boolean p_IsActive)
@@ -66,7 +74,157 @@ class HourLFW{
 'TextView m_LabelTextView; Lembrar relacionamento
 }
 
+class IFrameLFW{
+'ArrayList<View> m_OrderedObjectsList
+'FrameLayout.LayoutParams m_LayoutParams
++IFrameLFW (Context context)
++void add (View p_Component)
++void addBeforeComponent (View p_Component, View p_NextComponent)
++void addAfterComponent (View p_Component, View p_PreviousComponent)
++void clear ()
++void builScreen (Class<?> p_CallerClass, String p_Title)
+}
 
+class TimePickerLFW{
++TimePickerLFW (Context context, EditText editTextViewID)
++ void onTimeSet (android.widget.TimePicker view, int hourOfDay, int minute) <<Override>>
++void onClick (View v) <<Override>>
+-void updateDisplay ()
+-int m_Hour
+-int m_Minute
+‘- Context m_Context  lembrar Relacionamento
+‘- EditText m_EditText
+}
+
+class SelectLFW{
++SelectLFW (Context p_Context)
++SelectLFW (Context p_Context, String p_LabelText, boolean p_ShowColon, boolean p_IsActive)
++void setItensContent (List<String> p_StringList)
++ View getLayoutParams (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
+
+-int m_PaddingLeft
+-int m_PaddingTop
+-int m_PaddingRight
+-int m_PaddingBottom
+‘-ArrayAdapter<String> v_Adapter
+‘-TextView m_LabelTextView
+‘-Context m_LocalContext
+‘List<RadioButton> m_RadioButtonList
+}
+
+class ResultsLFW{
+‘private Context m_Context;
+ResultsLFW (Context p_Context)
++void setTitle (String p_TitleText)
++void setResultsItens (Context p_Context, ArrayList<ItemResultLFW> p_ResultsItemList, OnItemClickListener v_ItemClickListener)
+}
+
+class OnItemClickListenerResultsLFW{
++void onItemClick (AdapterView<?> parent, View view, int position, long id) <<Override>>
+}
+
+
+class ItemResultLFWAdapter{
+-ArrayList<ItemResultLFW> objects
++ItemResultLFWAdapter (Context context, int textViewResourceId, ArrayList<ItemResultLFW>objects)
++View getView (int position, View p_convertView, ViewGroup parent)
++Bitmap getCircle (int p_Color)
+}
+
+
+class RadioLFW{
+-int m_PaddingLeft
+-int m_PaddingTop
+-int m_PaddingRigth
+-int m_PaddingBottom
+‘-RadioButton[] m_RadioButtonList
+‘-TextView m_LabelTextView
+‘-Context m_LocalContext
++RadioLFW (Context context)
++RadioLFW (Context p_Context, String p_LabelText, boolean p_IsHorizontal, boolean p_IsActive, boolean p_ShowColon)
++void setItensContent (Context p_Context, Enum<?> p_Enum, boolean p_IsFromBaseScreenWithHeader)
++void setItensContent (Context p_Context, List<String> p_StringList, boolean p_IsFromBaseScreenWithHeader)
++View getLayoutParams (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
+}
+
+class MenuLFW{
++MenuLFW (Context p_Context)
++void setMenuItens (Context p_Context, ArrayList<ItemMenuLFW> p_MenuItemList)
+}
+
+class OnItemClickListenerMenuLFW{
++void onItemClick (AdapterView<?> parent, View view, int position, long id) <<Override>>
+}
+
+class ItemMenuLFWAdapter{
+‘-ArrayList<ItemMenuLFW> objects;
++ItemMenuLFWAdapter (Context context, int textViewResourceId, ArrayList<ItemMenuLFW> objects)
++View getView (int position, View convertView, ViewGroup parent)
+
+}
+
+class LabelValueLFW{
+-int m_PaddingLeft
+-int m_PaddingTop
+-int m_PaddingRight
+-int m_PaddingBottom
+‘TextView m_Value;
++LabelValueLFW (Context context)
++LabelValueLFW (Context p_Context, String p_Label, String p_Value, Boolean p_ShowColon)
++View getLayoutParams (int p_PreviousComponentId, IFrameLFW p_IFrame)
++void setValuePadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
+}
+
+class ItemResultLFW {
+-String m_ItemMenuIdentify
+-String m_ItemMenuInfo1
+-m_ItemMenuInfo2
+-m_ItemStatusColor
+‘-Class m_ItemMenuClass
+
++ItemResultLFW (String p_ItemMenuIdentify, String p_ItemMenuInfo1, String p_ItemMenuInfo2, Integer p_ItemStatusColor, Class p_ItemMenuClass)
++String getItemMenuIdentify ()
++void setItemMenuIdentify (String m_ItemMenuIdentify)
++String getItemMenuInfo1 ()
++void setItemMenuInfo1 (String m_ItemMenuInfo1)
++String getItemMenuInfo2 ()
++void setItemMenuInfo2 (String m_ItemMenuInfo2)
++Integer getItemStatusColor ()
++void setItemStatusColor (int m_ItemStatus)
++Class getItemMenuClass ()
++void setItemMenuClass (Class m_ItemMenuClass)
+}
+
+class ItemMenuLFW {
+-String m_ItemMenuName
+‘-Class m_ItemMenuClass
++ItemMenuLFW (String m_ItemMenuName, Class m_ItemMenuClass)
++String getItemMenuName ()
++void setItemMenuName (String m_ItemMenuName)
++Class getItemMenuClass ()
++void setItemMenuClass (Class m_ItemMenuClass)
+}
+
+class InputPasswordLFW{
++InputPasswordLFW (Context context)
++InputPasswordLFW (Context p_Context, String p_Text, boolean p_IsActive)
++View getLayoutParams (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
+}
+
+class InputLFW{
+-int m_PaddingLeft
+-int m_PaddingTop
+-int m_PaddingRight
+-int m_PaddingBottom
+‘-TextView m_LabelTextView;
++InputLFW(Context context)
++InputLFW (Context p_Context, String p_Text, boolean p_ShowHint, boolean p_ShowColon,boolean p_IsActive)
++View getLayoutParamsWhitoutHeader (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++View getLayoutParams (int p_PreviousComponentId, boolean p_IsBaseScreenWithHeaderChild, IFrameLFW p_IFrame)
++void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int p_PaddingBottom)
+}
 
 'abstract class AbstractList
 'abstract AbstractCollection

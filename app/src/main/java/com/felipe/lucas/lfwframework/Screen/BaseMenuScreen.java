@@ -18,8 +18,7 @@ public class BaseMenuScreen extends BaseScreenWithHeader {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        m_Context = getApplicationContext();
-        m_Menu = new MenuLFW(m_Context);
+        m_Menu = new MenuLFW(getApplicationContext());
     }
 
 //    @Override

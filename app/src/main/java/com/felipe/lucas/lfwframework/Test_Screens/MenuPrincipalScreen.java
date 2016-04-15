@@ -32,6 +32,6 @@ public class MenuPrincipalScreen extends BaseMenuScreen {
                 ProductionOrderResultsScreen.class));
         m_ItemMenuList.add(new ItemMenuLFW("Detalhes Ordem Produção",
                 ProductionOrderDetailsScreen.class));
-        m_Menu.setMenuItens(m_Context, m_ItemMenuList);
+        m_Menu.setMenuItens(getApplicationContext(), m_ItemMenuList);
     }
 }

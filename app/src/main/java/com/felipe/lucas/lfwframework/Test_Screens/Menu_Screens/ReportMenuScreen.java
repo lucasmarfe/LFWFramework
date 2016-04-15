@@ -24,6 +24,6 @@ public class ReportMenuScreen extends BaseMenuScreen {
     private void buildOptions () {
         m_ItemMenuList.add(new ItemMenuLFW("Controle de estoque",
                 InventoryFormScreen.class));
-        m_Menu.setMenuItens(m_Context, m_ItemMenuList);
+        m_Menu.setMenuItens(getApplicationContext(), m_ItemMenuList);
     }
 }
