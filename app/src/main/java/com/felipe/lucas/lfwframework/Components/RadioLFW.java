@@ -18,22 +18,13 @@ import java.util.List;
 /**
  * Created by lucas on 20/01/2016.
  */
-public class RadioLFW extends RadioGroup {
-    private int m_PaddingLeft;
-    private int m_PaddingTop;
-    private int m_PaddingRight;
-    private int m_PaddingBottom;
-
+public class RadioLFW extends RadioGroup implements Components {
     private RadioButton[] m_RadioButtonList;
-
     private TextView m_LabelTextView;
-
     private Context m_Context;
-
     public RadioLFW (Context context) {
         super(context);
     }
-
     public RadioLFW (Context p_Context, String p_LabelText, boolean p_IsHorizontal, boolean
             p_IsActive, boolean p_ShowColon) {
         super(p_Context);
@@ -45,9 +36,7 @@ public class RadioLFW extends RadioGroup {
         m_LabelTextView.setTextColor(ContextCompat.getColor(m_Context, R.color.black));
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
         m_LabelTextView.setId(UtilLFW.getAvailableID());
-        setLabelPadding(0, 20, 0, 20);
     }
-
     public void setItensContent (Context p_Context, Enum<?> p_Enum, boolean
             p_IsFromBaseScreenWithHeader) {
         int c_Count = 0;
@@ -106,7 +95,8 @@ public class RadioLFW extends RadioGroup {
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         m_LabelTextView.setTextSize(18);
         m_LabelTextView.setLayoutParams(v_LayoutParamElement);
-        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRight, m_PaddingBottom);
+        m_LabelTextView.setPadding(10, 8, 10, 8);
+        setPadding(10, 8, 10, 8);
         p_IFrame.addView(m_LabelTextView);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
                 RelativeLayout.LayoutParams
@@ -118,13 +108,4 @@ public class RadioLFW extends RadioGroup {
         p_IFrame.addView(this);
         return m_LabelTextView;
     }
-
-    public void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
-            p_PaddingBottom) {
-        m_PaddingLeft = p_PaddingLeft;
-        m_PaddingTop = p_PaddingTop;
-        m_PaddingRight = p_PaddingRigth;
-        m_PaddingBottom = p_PaddingBottom;
-    }
-
 }

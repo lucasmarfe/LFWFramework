@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Screen;
 
 import android.os.Bundle;
 
+import com.felipe.lucas.lfwframework.Components.ConfigValueLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
@@ -19,16 +20,15 @@ public class BaseConfigurationScreen extends BaseScreenWithHeader {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         buildPage();
-        m_IFrame.builScreen(this.getClass(), "Configurações");
+        m_IFrame.builScreen(this.getClass(), "Especificação");
         setContentView(m_IFrame);
     }
 
     public void buildPage () {
         TreeMap<String, String> v_ConfigList = UtilLFW.getConfigTreeMap();
         for (Map.Entry<String, String> v_Item : v_ConfigList.entrySet()) {
-            LabelValueLFW v_ItemLabelValue = new LabelValueLFW(getApplicationContext(), v_Item
+            ConfigValueLFW v_ItemLabelValue = new ConfigValueLFW(getApplicationContext(), v_Item
                     .getKey(), v_Item.getValue(), true);
-            v_ItemLabelValue.setValuePadding(10, 50, 0, 50);
             m_IFrame.add(v_ItemLabelValue);
         }
 

@@ -29,7 +29,7 @@ public class ProductionOrderDetailsScreen extends BaseDetailsScreen {
         super.onCreate(savedInstanceState);
         buildPage();
         buildResultsGrid();
-        m_IFrame.builScreen(this.getClass(), "PO Detalhes");
+        m_IFrame.builScreen(this.getClass(), "OP Detalhes");
         setContentView(m_IFrame);
     }
 
@@ -74,7 +74,7 @@ public class ProductionOrderDetailsScreen extends BaseDetailsScreen {
                 "Iniciada", "Confirmada", "Finalizada"));
         v_SelShift.setSelection(3);
 
-        ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Inicar Ordem", true);
+        ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Iniciar Ordem", true);
         //ButtonLFW v_FilterButton = new ButtonLFW(getApplicationContext(), "Finalizar Ordem", true);
 
         /*v_FilterButton.setOnClickListener(new View.OnClickListener() {

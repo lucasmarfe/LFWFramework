@@ -82,12 +82,17 @@ public class IFrameLFW extends RelativeLayout {
             {
                 ((Toolbar)v_Component).setTitle(p_Title);
             }
+
+            if (v_Component instanceof Components) {
+                v_PreviousComponent = ((Components) v_Component).getLayoutParams
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            }/*
             if (v_Component instanceof CheckBoxLFW) {
                 v_PreviousComponent = ((CheckBoxLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else if (v_Component instanceof LabelValueLFW) {
                 v_PreviousComponent = ((LabelValueLFW) v_Component).getLayoutParams
-                        (v_PreviousComponent.getId(), this);
+                        (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
             } else if (v_Component instanceof DateLFW) {
                 v_PreviousComponent = ((DateLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
@@ -109,7 +114,10 @@ public class IFrameLFW extends RelativeLayout {
             } else if (v_Component instanceof SelectLFW) {
                 v_PreviousComponent = ((SelectLFW) v_Component).getLayoutParams
                         (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
-            } else {
+            } else if (v_Component instanceof ConfigValueLFW) {
+            v_PreviousComponent = ((ConfigValueLFW) v_Component).getLayoutParams
+                    (v_PreviousComponent.getId(), v_IsBaseScreenWithHeaderChild, this);
+            }*/ else {
                 v_PreviousComponent = v_Component;
                 addView(v_Component, v_LayoutParamElement);
             }

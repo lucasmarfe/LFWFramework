@@ -55,6 +55,7 @@ public class ResultsLFW extends ListView {
         v_Title.setPadding(0, 10, 0, 10);
         v_Title.setTextSize(16);
         v_Title.setTypeface(null, Typeface.BOLD);
+        v_Title.setTextColor(ContextCompat.getColor(m_Context, R.color.white));
         addHeaderView(v_Title);
     }
 
@@ -136,32 +137,6 @@ class ItemResultLFWAdapter extends ArrayAdapter<ItemResultLFW> {
     }
 
     private Bitmap getCircle (int p_Color) {
-//        Bitmap bitmap = Bitmap.createBitmap(
-//                5, // Width
-//                5, // Height
-//                Bitmap.Config.ARGB_8888 // Config
-//        );
-//        // Initialize a new Canvas instance
-//        Canvas canvas = new Canvas(bitmap);
-////        // Draw a solid color to the canvas background
-//        canvas.drawColor(p_Color);
-////        // Initialize a new Paint instance to draw the Circle
-//        Paint paint = new Paint();
-//        paint.setStyle(Paint.Style.FILL);
-//        paint.setColor(p_Color);
-//        paint.setAntiAlias(true);
-//        int radius = 10;
-//        int padding = 1;
-//        canvas.drawCircle(
-//                canvas.getWidth() / 2, // cx
-//                canvas.getHeight() / 2, // cy
-//                radius - padding, // Radius
-//                paint // Paint
-//        );
-//        return bitmap;
-        // Display the newly created bitmap on app interface
-        //mImageView.setImageBitmap(bitmap);
-
         Bitmap output = Bitmap.createBitmap(20,
                 20, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(output);

@@ -3,7 +3,7 @@
     <item
         android:id="@+id/config_item"
         android:orderInCategory="101"
-        android:title="Configurações"
+        android:title="Especificação"
         android:icon="@drawable/ic_first_page_white_36dp"
         app:showAsAction="never"
         />

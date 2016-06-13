@@ -2,6 +2,7 @@ package com.felipe.lucas.lfwframework.Screen;
 
 import android.os.Bundle;
 
+import com.felipe.lucas.lfwframework.Components.ConfigValueLFW;
 import com.felipe.lucas.lfwframework.Components.LabelValueLFW;
 import com.felipe.lucas.lfwframework.Util.UtilLFW;
 
@@ -25,9 +26,9 @@ public class BaseAboutScreen extends BaseScreenWithHeader {
         TreeMap<String, String> v_ConfigList = UtilLFW.getConfigTreeMap();
         String[] v_Lines = v_ConfigList.get("AboutLine").split(";");
         for (String v_Value : v_Lines) {
-            LabelValueLFW v_ItemLabelValue = new LabelValueLFW(getApplicationContext(), v_Value,
+            ConfigValueLFW v_ItemLabelValue = new ConfigValueLFW(getApplicationContext(), v_Value,
                     null, false);
-            v_ItemLabelValue.setValuePadding(10, 50, 0, 0);
+            /*v_ItemLabelValue.setPadding(10, 50, 0, 0);*/
             m_IFrame.add(v_ItemLabelValue);
         }
     }

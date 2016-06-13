@@ -62,7 +62,7 @@ public class BaseLoginScreen extends BaseScreen {
         m_inPassword.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         m_inPassword.setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color.inputGrayBright));
         m_inPassword.setTextSize(20);
-        m_btnLogin = new ButtonLFW(getApplicationContext(), "Login", true);
+        m_btnLogin = new ButtonLFW(getApplicationContext(), "Entrar", true);
         m_IFrame.add(m_inUserName);
         m_IFrame.add(m_inPassword);
         m_IFrame.add(m_btnLogin);

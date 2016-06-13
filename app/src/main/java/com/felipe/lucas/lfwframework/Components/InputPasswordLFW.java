@@ -13,7 +13,7 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
 /**
  * Created by lucas on 07/01/2016.
  */
-public class InputPasswordLFW extends EditText {
+public class InputPasswordLFW extends EditText implements Components {
     public InputPasswordLFW (Context context) {
         super(context);
     }
@@ -23,7 +23,7 @@ public class InputPasswordLFW extends EditText {
         setId(UtilLFW.getAvailableID());
         setHint(p_Text);
         setSingleLine(true);
-        setPadding(200, 0, 0, 0);
+        setPadding(0, 0, 0, 0);
         setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         setActivated(p_IsActive);
         setTextColor(ContextCompat.getColor(p_Context, R.color.black));
@@ -43,6 +43,7 @@ public class InputPasswordLFW extends EditText {
                             .WRAP_CONTENT);
         }
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
+        setPadding(18, 8, 8, 20);
         //v_LayoutParamElement.setMargins(0, 20, 0, 20);
         this.setLayoutParams(v_LayoutParamElement);
         p_IFrame.addView(this);

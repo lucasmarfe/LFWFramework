@@ -30,7 +30,8 @@ public class ProductionExecutionResultsScreen extends BaseFilterScreen {
                 (getApplicationContext());
         m_FilterFrame.setResultsItens(getApplicationContext(), m_ResultItensList,
                 v_ItemClickListener);
-        ButtonLFW v_ButtonPrint = new ButtonLFW(getApplicationContext(), "Retirar amostra", true);
+        ButtonLFW v_ButtonPrint = new ButtonLFW(getApplicationContext(), "Retirar amostra(s)",
+                true);
         m_IFrame.add(v_ButtonPrint);
         m_IFrame.add(m_FilterFrame);
     }
@@ -85,7 +86,7 @@ class OnItemClickListenerPOExecutionResultsLFW implements AdapterView.OnItemClic
 //        //String str = (String) o;//As you are using Default String Adapter
 //        Toast.makeText(m_Context, o.getItemMenuIdentify() != null ? o.getItemMenuIdentify() :
 //                "Header", Toast.LENGTH_SHORT).show();
-        Intent v_Intent = new Intent(view.getContext(), ProductionOrderDetailsScreen.class);
+        Intent v_Intent = new Intent(view.getContext(), ProductionExecutionDetailsScreen.class);
         v_Intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         view.getContext().startActivity(v_Intent);
     }

@@ -18,7 +18,7 @@ public class OperationMenuScreen extends BaseMenuScreen {
         super.onCreate(savedInstanceState);
         buildOptions();
         m_IFrame.add(m_Menu);
-        m_IFrame.builScreen(this.getClass(), "Operação");
+        m_IFrame.builScreen(this.getClass(), "Menu Produção");
         addOnScreen(m_IFrame);
     }
 

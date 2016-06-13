@@ -21,9 +21,9 @@ public class MainMenuScreen extends BaseMenuScreen {
     }
 
     private void buildOptions () {
-        m_ItemMenuList.add(new ItemMenuLFW("Operação", OperationMenuScreen.class));
-        m_ItemMenuList.add(new ItemMenuLFW("Qualidade",
-                QualityMenuScreen.class));
+        m_ItemMenuList.add(new ItemMenuLFW("Produção", OperationMenuScreen.class));
+        //m_ItemMenuList.add(new ItemMenuLFW("Qualidade",
+        //         QualityMenuScreen.class));
 //        m_ItemMenuList.add(new ItemMenuLFW("Cadastro",
 //                CadastreMenuScreen.class));
 //        m_ItemMenuList.add(new ItemMenuLFW("Relatórios",

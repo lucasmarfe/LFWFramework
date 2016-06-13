@@ -72,7 +72,8 @@ public class ProductionExecutionDetailsScreen extends BaseDetailsScreen {
         LabelValueLFW v_InWorkCenter = new LabelValueLFW(getApplicationContext(),"Centro de Trabalho","9991 - LINGLC01",true);
         LabelValueLFW v_InCliente = new LabelValueLFW(getApplicationContext(),"Cliente","ALSTOM LTDA",true);
 
-        ButtonLFW v_StartOperation = new ButtonLFW(getApplicationContext(), "Inicar Operação", true);
+        ButtonLFW v_StartOperation = new ButtonLFW(getApplicationContext(), "Iniciar Operação",
+                true);
         ButtonLFW v_ConfirmButton = new ButtonLFW(getApplicationContext(), "Confirmar Produção", true);
         /*v_FilterButton.setOnClickListener(new View.OnClickListener() {
             @Override

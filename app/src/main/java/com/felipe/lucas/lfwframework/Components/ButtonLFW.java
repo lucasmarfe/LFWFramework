@@ -12,7 +12,7 @@ import com.felipe.lucas.lfwframework.Util.UtilLFW;
 /**
  * Created by lucas on 13/01/2016.
  */
-public class ButtonLFW extends Button {
+public class ButtonLFW extends Button implements Components {
 
     ButtonLFW (Context context)
     {
@@ -25,7 +25,6 @@ public class ButtonLFW extends Button {
         setText(p_Text);
         setTextSize(18);
         //setPadding(100, 20, 20, 100);
-
         setTextColor(ContextCompat.getColor(p_Context, R.color.textButtonPressed));
         setActivated(p_IsActive);
         setBackgroundResource(R.drawable.buttons_properties);
@@ -41,7 +40,7 @@ public class ButtonLFW extends Button {
         v_LayoutParamElement.addRule(RelativeLayout.CENTER_HORIZONTAL,
                 RelativeLayout.TRUE);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
-        v_LayoutParamElement.setMargins(0, 20, 0, 20);
+        v_LayoutParamElement.setMargins(10, 20, 10, 20);
         this.setLayoutParams(v_LayoutParamElement);
         p_IFrame.addView(this);
         return this;

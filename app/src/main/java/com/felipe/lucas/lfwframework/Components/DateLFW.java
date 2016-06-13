@@ -17,15 +17,7 @@ import java.util.Calendar;
 /**
  * Created by lucas on 17/03/2016.
  */
-public class DateLFW extends EditText {
-
-    private int m_PaddingLeft = 0;
-
-    private int m_PaddingTop = 0;
-
-    private int m_PaddingRigth = 0;
-
-    private int m_PaddingBottom = 0;
+public class DateLFW extends EditText implements Components {
 
     private TextView m_LabelTextView;
 
@@ -52,7 +44,6 @@ public class DateLFW extends EditText {
         m_LabelTextView.setText(p_LabelText + (p_ShowColon ? ": " : " "));
         m_LabelTextView.setTextSize(18);
         m_LabelTextView.setId(UtilLFW.getAvailableID());
-        setLabelPadding(0, 8, 0, 8);
     }
 
 
@@ -64,7 +55,7 @@ public class DateLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         m_LabelTextView.setLayoutParams(v_LayoutParamElement);
-        m_LabelTextView.setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRigth, m_PaddingBottom);
+        m_LabelTextView.setPadding(10, 8, 10, 8);
         p_IFrame.addView(m_LabelTextView);
         RelativeLayout.LayoutParams v_LayoutParamElement2 = new
                 RelativeLayout.LayoutParams
@@ -72,17 +63,9 @@ public class DateLFW extends EditText {
                         .WRAP_CONTENT);
         v_LayoutParamElement2.addRule(RelativeLayout.BELOW, p_PreviousComponentId);
         v_LayoutParamElement2.addRule(RelativeLayout.RIGHT_OF, m_LabelTextView.getId());
-        setPadding(m_PaddingLeft, m_PaddingTop, m_PaddingRigth, m_PaddingBottom);
+        setPadding(10, 8, 10, 8);
         this.setLayoutParams(v_LayoutParamElement2);
         p_IFrame.addView(this);
         return m_LabelTextView;
-    }
-
-    public void setLabelPadding (int p_PaddingLeft, int p_PaddingTop, int p_PaddingRigth, int
-            p_PaddingBottom) {
-        m_PaddingLeft = p_PaddingLeft;
-        m_PaddingTop = p_PaddingTop;
-        m_PaddingRigth = p_PaddingRigth;
-        m_PaddingBottom = p_PaddingBottom;
     }
 }
